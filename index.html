@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>數位媒體科技發展簡介教材</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #3b82f6;
+            border: 4px solid #dbeafe;
+        }
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: -21px;
+            top: 25px;
+            width: 2px;
+            height: 100%;
+            background-color: #dbeafe;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <h1 class="text-3xl font-bold text-slate-900">數位媒體科技發展簡介</h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        
+        <!-- Introduction -->
+        <div class="bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4 rounded-md mb-12" role="alert">
+            <p class="font-bold">課程目標</p>
+            <p>本課程旨在引導學員快速了解數位媒體的演進過程，掌握圖片、聲音、影像等核心技術的基本概念，並透過實作體驗當前熱門的媒體科技應用，展望未來發展趨勢。</p>
+        </div>
+
+        <!-- Module 1 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-6">第一單元：數位媒體是什麼？</h2>
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">1. 數位媒體的定義與範例</h3>
+                    <p class="text-slate-700">數位媒體是以數位形式（0與1的二進位碼）建立、觀看、分發、修改和儲存的媒體內容。相對於報紙、黑膠唱片等「類比」媒體，數位媒體更易於複製、傳輸與編輯。</p>
+                    <div class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="text-center p-4 bg-white rounded-lg shadow-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+                            <p class="mt-2 font-medium">數位文字</p>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-lg shadow-sm">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                            <p class="mt-2 font-medium">數位圖像</p>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-lg shadow-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.858 5.858a3 3 0 104.243 4.243L4.243 15.957a3 3 0 10-4.243-4.243l5.858-5.858z" /></svg>
+                            <p class="mt-2 font-medium">數位音訊</p>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-lg shadow-sm">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                            <p class="mt-2 font-medium">數位視訊</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">2. 從類比到數位：歷史演進</h3>
+                    <p class="text-slate-700">數位革命從20世紀中葉開始，徹底改變了資訊的儲存與傳遞方式。</p>
+                    <div class="mt-4 relative pl-8">
+                        <div class="timeline-item relative pb-8">
+                            <h4 class="font-semibold">1980s：個人電腦普及</h4>
+                            <p class="text-sm text-slate-600">PC的出現讓數位內容的創作與消費進入家庭。</p>
+                        </div>
+                        <div class="timeline-item relative pb-8">
+                            <h4 class="font-semibold">1990s：全球資訊網 (WWW)</h4>
+                            <p class="text-sm text-slate-600">網際網路讓數位媒體的傳播無遠弗屆，網站、Email成為主流。</p>
+                        </div>
+                        <div class="timeline-item relative pb-8">
+                            <h4 class="font-semibold">2000s：寬頻與社群媒體</h4>
+                            <p class="text-sm text-slate-600">更快的網速催生了影音平台(YouTube)，社群網站(Facebook)也開始萌芽。</p>
+                        </div>
+                        <div class="timeline-item relative">
+                            <h4 class="font-semibold">2010s：行動裝置時代</h4>
+                            <p class="text-sm text-slate-600">智慧型手機成為主要的媒體終端，App與行動網路重塑了我們的生活。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Module 2 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-6">第二單元：核心技術與里程碑</h2>
+            <div class="space-y-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">1. 數位影像的基礎</h3>
+                    <ul class="list-disc list-inside space-y-2 text-slate-700">
+                        <li><strong>像素 (Pixel)</strong>: 組成數位影像的最小單位，像是一個個微小的色塊。</li>
+                        <li><strong>解析度 (Resolution)</strong>: 影像包含的像素總數，如 1920x1080，解析度越高畫面越精細。</li>
+                        <li><strong>色彩深度 (Color Depth)</strong>: 每個像素能顯示的顏色數量，決定了色彩的豐富程度。</li>
+                        <li><strong>檔案格式</strong>:
+                            <ul class="list-['-_'] list-inside ml-4 mt-1 space-y-1">
+                                <li><strong>JPEG</strong>: 有損壓縮，適合照片，檔案較小。</li>
+                                <li><strong>PNG</strong>: 無損壓縮，支援透明背景，適合網頁圖示。</li>
+                                <li><strong>GIF</strong>: 支援動畫，但色彩數有限。</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Practical 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-slate-200">
+                    <h3 class="text-xl font-bold text-blue-600 mb-4">【實務操作一】基礎圖片編輯</h3>
+                    <p class="mb-4">我們將使用一個免費的線上圖片編輯工具 <a href="https://www.photopea.com/" target="_blank" class="text-blue-500 hover:underline font-semibold">Photopea</a> 來學習基本操作。它就像網頁版的 Photoshop。</p>
+                    <ol class="list-decimal list-inside space-y-4">
+                        <li>
+                            <strong>開啟圖片</strong>: 進入 Photopea 網站，從您的電腦中拖入一張照片，或點擊「從電腦打開」。
+                            <div class="mt-2 p-3 bg-slate-100 rounded-md text-sm">
+                                <strong>提示：</strong>可以使用自己手機拍的照片來練習。
+                            </div>
+                        </li>
+                        <li>
+                            <strong>裁切工具</strong>: 在左側工具列找到「裁切工具」(圖示像兩個直角尺)。點選後，拖動照片邊緣的控制點，選擇您想保留的範圍，然後按 Enter 鍵確認。
+                        </li>
+                        <li>
+                            <strong>調整影像尺寸</strong>: 在上方選單選擇「影像」>「影像尺寸」。在彈出視窗中，您可以修改寬度或高度的數值（預設會等比例縮放），將圖片縮小後按「確定」。例如，將寬度改為 800 像素。
+                        </li>
+                        <li>
+                            <strong>儲存不同格式</strong>:
+                            <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
+                                <li><strong>存為 JPG</strong>: 點擊「檔案」>「轉存為」>「JPG」。您可以調整「品質」（通常 70-80% 已足夠），然後點擊「儲存」。觀察檔案大小。</li>
+                                <li><strong>存為 PNG</strong>: 點擊「檔案」>「轉存為」>「PNG」。直接點擊「儲存」。比較看看 PNG 格式的檔案是否比 JPG 大。</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">2. 數位音訊與視訊的基礎</h3>
+                     <ul class="list-disc list-inside space-y-2 text-slate-700">
+                        <li><strong>音訊</strong>: 透過「取樣」將連續的聲波轉換為不連續的數位訊號。常見格式有 MP3 (壓縮)、WAV (無壓縮)。</li>
+                        <li><strong>視訊</strong>: 由連續的靜態圖像（稱為「幀」）快速播放而成。FPS (每秒幀率) 越高，畫面越流暢。常見格式有 MP4、MOV。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Module 3 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-6">第三單元：當代數位媒體樣貌 </h2>
+            <div class="space-y-8">
+                 <div>
+                    <h3 class="text-xl font-semibold mb-2">1. Web 2.0 與社群媒體</h3>
+                    <p class="text-slate-700">Web 2.0 的核心精神是「使用者生成內容 (UGC)」。平台提供工具，內容由使用者創造。這催生了部落格、維基百科，以及今日的社群巨頭。</p>
+                    <p class="mt-2 text-slate-700"><strong>代表平台：</strong> Facebook、YouTube、Instagram、TikTok、X (Twitter)。</p>
+                </div>
+                 <div>
+                    <h3 class="text-xl font-semibold mb-2">2. 串流服務與行動裝置革命</h3>
+                    <p class="text-slate-700">高速網路與智慧型手機的結合，讓「隨選即播」的串流服務成為主流，改變了我們聽音樂、看電影的方式。媒體消費從客廳轉移到我們的手中。</p>
+                     <p class="mt-2 text-slate-700"><strong>代表平台：</strong> Netflix、Spotify、Disney+、Apple Music。</p>
+                </div>
+
+                <!-- Practical 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-slate-200">
+                    <h3 class="text-xl font-bold text-blue-600 mb-4">【實務操作二】AI 圖像生成初體驗 (約 30 分鐘)</h3>
+                    <p class="mb-4">生成式 AI 是目前最熱門的數位媒體技術之一。我們來試用一個免費的 AI 繪圖工具，體驗「以文生圖」的魔力。</p>
+                    <p class="mb-4">推薦工具：可以搜尋 "Bing Image Creator" 或 "Copilot Designer"，使用 Microsoft 帳號即可免費登入使用。</p>
+                    <ol class="list-decimal list-inside space-y-4">
+                        <li>
+                            <strong>進入 AI 繪圖網站</strong>: 打開瀏覽器，進入您選擇的 AI 圖像生成網站。
+                        </li>
+                        <li>
+                            <strong>撰寫「咒語」(Prompt)</strong>: 在輸入框中，用文字詳細描述您想看到的畫面。描述越具體，生成的效果越可能符合您的想像。
+                            <div class="mt-2 p-3 bg-slate-100 rounded-md text-sm">
+                                <p><strong>咒語範例：</strong></p>
+                                <ul class="list-disc list-inside mt-1">
+                                    <li>一隻穿著太空衣的貓，在月球上喝咖啡，超現實主義風格。</li>
+                                    <li>賽博龐克風格的未來台北夜市，霓虹燈閃爍，有飛行機車。</li>
+                                    <li>水彩畫風格，一片寧靜的森林湖泊，有鹿在喝水。</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>生成與觀察</strong>: 按下「生成」或「創作」按鈕，等待幾十秒。AI 會根據您的描述產生數張圖片。
+                        </li>
+                        <li>
+                            <strong>嘗試修改與變化</strong>: 試著修改您的咒語，例如更換主題、風格（如「像素藝術風」、「卡通風格」、「照片級寫實」），看看結果有何不同。
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Module 4 -->
+        <section>
+            <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-6">第四單元：未來趨勢與總結</h2>
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">1. 未來趨勢</h3>
+                     <ul class="list-disc list-inside space-y-2 text-slate-700">
+                        <li><strong>沉浸式體驗 (VR/AR/MR)</strong>: 虛擬實境(VR)、擴增實境(AR)與混合實境(MR) 將模糊現實與數位的邊界，創造全新的互動娛樂與協作方式。</li>
+                        <li><strong>去中心化與 Web3</strong>: 基於區塊鏈技術，強調使用者擁有自己的數據與內容所有權。</li>
+                        <li><strong>AI 的深度融合</strong>: AI 將不僅是內容創作工具，更會成為個人化的媒體助理、互動敘事的驅動者。</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">2. 倫理與挑戰</h3>
+                    <p class="text-slate-700">科技帶來便利，也伴隨著挑戰，如假新聞、深度偽造 (Deepfake)、數據隱私、演算法偏見等，是我們需要共同面對的課題。</p>
+                </div>
+                 <div>
+                    <h3 class="text-xl font-semibold mb-2">3. 總結與問答</h3>
+                    <p class="text-slate-700">數位媒體的發展日新月異，從靜態的圖文到動態的影音，再到互動與生成的智慧媒體。保持好奇心與學習的熱情，是擁抱這個時代最好的方式。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-white mt-12">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4 text-center">
+            <p>&copy; 2024 數位媒體科技發展簡介教材. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
