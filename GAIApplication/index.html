@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成式AI應用介紹</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #111827;
+            color: #E5E7EB;
+        }
+        .content-card {
+            background-color: #1F2937;
+            border: 1px solid #374151;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+        }
+        .nav-link {
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #38BDF8;
+            background-color: #1F2937;
+            border-left-color: #38BDF8;
+        }
+        /* For Webkit browsers like Chrome, Safari */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1F2937;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #4B5563;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6B7280;
+        }
+    </style>
+</head>
+<body class="flex">
+
+    <!-- Sidebar Navigation -->
+    <aside id="sidebar" class="fixed top-0 left-0 h-full w-64 bg-gray-900 text-gray-300 p-4 transition-transform duration-300 ease-in-out -translate-x-full md:translate-x-0 overflow-y-auto">
+        <h2 class="text-2xl font-bold text-white mb-6">導覽</h2>
+        <nav id="nav-menu" class="space-y-2">
+            <a href="#intro" class="nav-link block p-2 rounded-r-lg">AI 簡介</a>
+            <a href="#gen-ai" class="nav-link block p-2 rounded-r-lg">生成式 AI 是什麼？</a>
+            <a href="#usage" class="nav-link block p-2 rounded-r-lg">正確使用方法</a>
+            <a href="#challenges" class="nav-link block p-2 rounded-r-lg">挑戰與議題</a>
+            <a href="#platforms" class="nav-link block p-2 rounded-r-lg">主流平台</a>
+            <a href="#tools" class="nav-link block p-2 rounded-r-lg">AI 多媒體工具應用</a>
+            <a href="#gamma-tool" class="nav-link block p-2 rounded-r-lg">Gamma 簡報生成</a>
+            <a href="#copilot-tool" class="nav-link block p-2 rounded-r-lg">Copilot 影像建立</a>
+            <a href="#chatgpt-tool" class="nav-link block p-2 rounded-r-lg">ChatGPT 應用</a>
+            <a href="#prompting" class="nav-link block p-2 rounded-r-lg">提示詞技巧</a>
+            <a href="#prompt-examples" class="nav-link block p-2 rounded-r-lg">提示詞範例</a>
+            <a href="#gpts" class="nav-link block p-2 rounded-r-lg">探索 GPTs</a>
+            <a href="#detection" class="nav-link block p-2 rounded-r-lg">AI 內容檢測</a>
+            <a href="#future" class="nav-link block p-2 rounded-r-lg">AI 的下一步</a>
+        </nav>
+    </aside>
+
+    <!-- Mobile Menu Button -->
+    <button id="menu-toggle" class="md:hidden fixed top-4 left-4 z-20 p-2 bg-gray-800 text-white rounded-md">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+    </button>
+
+    <!-- Main Content -->
+    <main class="w-full md:ml-64 p-4 md:p-8 space-y-12">
+        <header class="text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white">生成式AI應用</h1>
+            <p class="text-lg text-gray-400 mt-2">作者：張志祥 | 日期：2025-10-09</p>
+        </header>
+
+        <!-- Section 1: AI 簡介 -->
+        <section id="intro" class="scroll-mt-20">
+            <h2 class="text-3xl font-bold mb-6 text-sky-400 border-l-4 border-sky-400 pl-4">AI 簡介</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="content-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-3">人工智慧 (AI) vs 機器學習 (ML)</h3>
+                    <p class="text-gray-300"><strong class="text-sky-400">人工智慧 (AI):</strong> 電腦科學的一個領域，致力於解決與人類智慧相關的認知問題。</p>
+                    <p class="text-gray-300 mt-2"><strong class="text-sky-400">機器學習 (ML):</strong> 實現 AI 的一種路徑，讓電腦能從資料中學習。傳統流程為：資料輸入 → 人為特徵擷取 → 訓練模型 → 輸出判斷。</p>
+                </div>
+                <div class="content-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-3">深度學習 (DL)</h3>
+                    <p class="text-gray-300">機器學習的一個子領域，以<strong class="text-sky-400">人工神經網路</strong>為架構，讓機器能自動對資料進行特徵學習，是當前許多先進 AI 技術的核心。</p>
+                </div>
+                <div class="content-card p-6 rounded-lg col-span-1 md:col-span-2">
+                    <h3 class="text-xl font-bold mb-3">AI 的兩大類型</h3>
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <div class="flex-1 p-4 bg-gray-800 rounded-md">
+                           <h4 class="text-lg font-semibold text-cyan-400">生成式 AI (Generative AI)</h4>
+                           <p class="mt-2">專注於<strong class="text-white">創造與生成</strong>新的內容。</p>
+                           <ul class="list-disc list-inside mt-2 space-y-1 text-gray-300">
+                               <li>文本生成</li>
+                               <li>圖片生成</li>
+                               <li>音樂/影片生成</li>
+                               <li>代碼生成</li>
+                           </ul>
+                        </div>
+                        <div class="flex-1 p-4 bg-gray-800 rounded-md">
+                           <h4 class="text-lg font-semibold text-teal-400">鑑別式 AI (Discriminative AI)</h4>
+                           <p class="mt-2">專注於<strong class="text-white">分類與判斷</strong>現有的資料。</p>
+                           <ul class="list-disc list-inside mt-2 space-y-1 text-gray-300">
+                               <li>人臉/車牌辨識</li>
+                               <li>推薦系統</li>
+                               <li>醫療診斷</li>
+                               <li>風險評估</li>
+                           </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: 生成式 AI 是什麼？ -->
+        <section id="gen-ai" class="scroll-mt-20">
+            <h2 class="text-3xl font-bold mb-6 text-sky-400 border-l-4 border-sky-400 pl-4">生成式 AI 是什麼？</h2>
+            <div class="content-card p-6 rounded-lg">
+                <p class="text-lg">生成式 AI (Generative AI, GAI)，又稱 AIGC (AI Generative Content)，是使用人工智慧來<strong class="text-cyan-300">生成全新、原創內容</strong>的技術。它不僅僅是分析或分類資料，而是像藝術家一樣進行創造性工作，產出文本、影像、音樂、影片、程式碼等內容。</p>
+            </div>
+        </section>
+
+        <!-- Section 3: 正確使用方法 -->
+        <section id="usage" class="scroll-mt-20">
+            <h2 class="text-3xl font-bold mb-6 text-sky-400 border-l-4 border-sky-400 pl-4">正確使用方法</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="content-card p-6 rounded-lg text-center">
+                    <h3 class="text-xl font-bold mb-2">1. 說明需求</h3>
+                    <p class="text-gray-300">指令必須<strong class="text-white">明確、具體</strong>，避免模糊不清的描述。</p>
+                </div>
+                <div class="content-card p-6 rounded-lg text-center">
+                    <h3 class="text-xl font-bold mb-2">2. 交代背景</h3>
+                    <p class="text-gray-300">提供<strong class="text-white">足夠的上下文</strong>，讓 AI 了解情境與脈絡。</p>
+                </div>
+                <div class="content-card p-6 rounded-lg text-center">
+                    <h3 class="text-xl font-bold mb-2">3. 補充或排除</h3>
+                    <p class="text-gray-300">透過正面或負面表述，<strong class="text-white">引導 AI 產出</strong>更符合期望的高品質內容。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: 挑戰與議題 -->
+        <section id="challenges" class="scroll-mt-20">
+            <h2 class="text-3xl font-bold mb-6 text-sky-400 border-l-4 border-sky-400 pl-4">挑戰與議題</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="content-card p-6 rounded-lg">
+                    <h3 class="font-bold">版權與智財權</h3>
+                    <p class="text-gray-300 mt-2">生成內容可能侵犯原創作品版權。</p>
+                </div>
+                <div class="content-card p-6 rounded-lg">
+                    <h3 class="font-bold">偏見與不當內容</h3>
+                    <p class="text-gray-300 mt-2">AI 可能複製訓練資料中的偏見。</p>
+                </div>
+                <div class="content-card p-6 rounded-lg">
+                    <h3 class="font-bold">真實性與可信度</h3>
+                    <p class="text-gray-300 mt-2">難以辨別 AI 生成內容的真偽。</p>
+                </div>
+                <div class="content-card p-6 rounded-lg">
+                    <h3 class="font-bold">技術發展</h3>
+                    <p class="text-gray-300 mt-2">技術尚未成熟，需持續改進完善。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: 主流平台 -->
+        <section id="platforms" class="scroll-mt-20">
+            <h2 class="text-3xl font-bold mb-6 text-sky-400 border-l-4 border-sky-400 pl-4">主流平台</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <a href="https://chatgpt.com/" target="_blank" class="content-card p-6 rounded-lg text-center hover:bg-sky-900/50">
+                    <h3 class="text-xl font-bold">ChatGPT</h3>
+                </a>
+                <a href="https://gemini.google.com/app" target="_blank" class="content-card p-6 rounded-lg text-center hover:bg-sky-900/50">
+                    <h3 class="text-xl font-bold">Google Gemini</h3>
+                </a>
+                <a href="https://claude.ai/" target="_blank" class="content-card p-6 rounded-lg text-center hover:bg-sky-900/50">
+                    <h3 class="text-xl font-bold">Claude</h3>
+                </a>
+                <a href="https://copilot.microsoft.com/" target="_blank" class="content-card p-6 rounded-lg text-center hover:bg-sky-900/50">
+                    <h3 class="text-xl font-bold">Microsoft Copilot</h3>
+                </a>
+            </div>
+        </section>
+
+        <!-- Section 6: AI 工具應用 -->
+        <section id="tools" class="scroll-mt-20">
+            <h2 class="text-3xl font-bold mb-6 text-sky-400 border-l-4 border-sky-400 pl-4">AI 多媒體工具應用</h2>
+            <div class="space-y-8">
+                <div class="content-card p-6 rounded-lg">
+                    <h3 class="text-2xl font-bold">Felo - AI 助理與知識管理</h3>
+                    <p class="text-gray-300 mt-2">整合 AI 簡報、心智圖生成、文件搜尋、網頁閱讀等功能。</p>
+                    <a href="https://felo.ai/zh-Hant/search" target="_blank" class="text-sky-400 hover:text-sky-300 mt-2 inline-block">訪問 Felo →</a>
+                </div>
+                <div class="content-card p-6 rounded-lg">
+                    <h3 class="text-2xl font-bold">Pollo / Viggle - 圖片與影片生成</h3>
+                    <p class="text-gray-300 mt-2">Pollo 專注於文字/圖片轉影片及風格轉換；Viggle 則擅長讓靜態人物照片動起來。</p>
+                    <div class="flex space-x-4 mt-2">
+                         <a href="https://pollo.ai/explore" target="_blank" class="text-sky-400 hover:text-sky-300">訪問 Pollo →</a>
+                         <a href="https://viggle.ai/home" target="_blank" class="text-sky-400 hover:text-sky-300">訪問 Viggle →</a>
+                    </div>
+                </div>
+                <div class="content-card p-6 rounded-lg">
+                    <h3 class="text-2xl font-bold">Suno - 文字生成音樂</h3>
+                    <p class="text-gray-300 mt-2">輸入文字描述即可生成包含旋律、歌詞、人聲的完整歌曲，並支援多種語言與風格自訂。</p>
+                     <a href="https://suno.com/create" target="_blank" class="text-sky-400 hover:text-sky-300 mt-2 inline-block">訪問 Suno →</a>
+                </div>
+                 <div class="content-card p-6 rounded-lg">
+                    <h3 class="text-2xl font-bold">Photopea - 線上圖片編輯</h3>
+                    <p class="text-gray-300 mt-2">免費、免安裝的線上圖片編輯器，操作體驗類似 Photoshop，並整合了 AI 功能如 Magic Replace。</p>
+                     <a href="https://www.photopea.com/" target="_blank" class="text-sky-400 hover:text-sky-300 mt-2 inline-block">訪問 Photopea →</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section 7: Gamma 簡報生成 -->
+        <section id="gamma-tool" class="scroll-mt-20">
+            <h2 class="text-3xl font-bold mb-6 text-sky-400 border-l-4 border-sky-400 pl-4">Gamma - AI 簡報/文件/網站生成</h2>
+             <div class="content-card p-6 rounded-lg">
+                <p class="text-lg">Gamma 是一個強大的 AI 內容生成平台，能將簡單的文字提示詞快速轉換為設計精美的簡報、文件或網頁。無需設計或程式技能，即可創造出視覺化、互動性強的內容。</p>
+                <ul class="list-disc list-inside mt-4 space-y-2 text-gray-300">
+                    <li><strong class="text-white">快速生成：</strong>輸入主題，AI 自動產生大綱與內容。</li>
+                    <li><strong class="text-white">互動元素：</strong>可嵌入圖片、影片、圖表等多媒體。</li>
+                    <li><strong class="text-white">模板豐富：</strong>提供多樣模板與主題，輕鬆自訂風格。</li>
+                    <li><strong class="text-white">方便協作與分享：</strong>支援 PDF/PPT 導出，並能即時線上分享。</li>
+                </ul>
+                <a href="https://gamma.app/" target="_blank" class="text-sky-400 hover:text-sky-300 mt-4 inline-block">訪問 Gamma →</a>
+            </div>
+        </section>
+
+        <!-- Section 8: Copilot 影像建立 -->
+        <section id="copilot-tool" class="scroll-mt-20">
+            <h2 class="text-3xl font-bold mb-6 text-sky-400 border-l-4 border-sky-400 pl-4">Copilot 影像建立工具</h2>
+            <div class="content-card p-6 rounded-lg">
+                <p class="text-lg">微軟的 Copilot 整合了強大的 DALL-E 3 模型，提供高品質的 AI 影像生成服務。使用者可以用自然語言（支援中文）描述畫面，生成從珠寶設計、室內設計到水彩畫等各種風格的圖片。</p>
+                <ul class="list-disc list-inside mt-4 space-y-2 text-gray-300">
+                    <li><strong class="text-white">高品質模型：</strong>基於 DALL-E 3，生成效果細膩。</li>
+                    <li><strong class="text-white">中文支援：</strong>可以直接使用中文提示詞進行創作。</li>
+                    <li><strong class="text-white">內容認證：</strong>實作 C2PA 標準，為生成內容提供來源證明，增加透明度。</li>
+                </ul>
+                 <a href="https://www.bing.com/images/create/" target="_blank" class="text-sky-400 hover:text-sky-300 mt-4 inline-block">訪問 Copilot 影像建立工具 →</a>
+            </div>
+        </section>
+        
+        <!-- Section 9: ChatGPT 應用 -->
+        <section id="chatgpt-tool" class="scroll-mt-20">
+            <h2 class="text-3xl font-bold mb-6 text-sky-400 border-l-4 border-sky-400 pl-4">ChatGPT 應用實例</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="content-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">蘇格拉底式輔導老師</h3>
+                    <p>設定角色，讓 ChatGPT 不直接給答案，而是透過提問引導學生獨立思考，解決數學或各種學科問題。</p>
+                </div>
+                <div class="content-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">室內設計師</h3>
+                    <p>扮演室內設計師，提供風格建議、色彩搭配、家具擺放等，並能根據描述生成參考圖片。</p>
+                </div>
+                <div class="content-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">歌詞與文學創作</h3>
+                    <p>指定歌曲名稱、風格、情感和結構，創作出完整的歌詞，或進行圖生文、詩詞創作。</p>
+                </div>
+                 <div class="content-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">資料分析師</h3>
+                    <p>上傳資料集（如 CSV 檔案），要求 ChatGPT 進行資料摘要、統計分析與總結。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 10: 提示詞技巧 -->
+        <section id="prompting" class="scroll-mt-20">
+            <h2 class="text-3xl font-bold mb-6 text-sky-400 border-l-4 border-sky-400 pl-4">提示詞 (Prompt) 技巧</h2>
+            <div class="space-y-6">
+                <div class="content-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">角色扮演法</h3>
+                    <p>為 AI 設定一個明確的專家角色，如「你是一位專業的導遊人員」、「你是一位精通英日文的翻譯專家」。這能讓 AI 的回應更具專業性和特定風格。</p>
+                </div>
+                <div class="content-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">提供清晰的規則與限制</h3>
+                    <p>給予具體的指令和限制，例如：「不要說'感謝你的來信'」、「不要過度承諾」、「請以繁體中文回應」。這能有效約束 AI 的輸出，使其更符合需求。</p>
+                </div>
+                <div class="content-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">精煉翻譯法 (多輪次)</h3>
+                    <p>要求 AI 分多個步驟進行任務。例如，先進行直譯，再根據直譯結果進行意譯和潤飾，確保最終結果既忠於原文又流暢自然。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 10.5: 提示詞範例 -->
+        <section id="prompt-examples" class="scroll-mt-20">
+            <h2 class="text-3xl font-bold mb-6 text-sky-400 border-l-4 border-sky-400 pl-4">提示詞 (Prompt) 範例</h2>
+            <div class="space-y-8">
+                <!-- ChatGPT Prompts -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4 text-white">ChatGPT 應用範例</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Example 1: Socratic Tutor -->
+                        <div class="content-card p-6 rounded-lg">
+                            <h4 class="text-xl font-bold mb-3">扮演蘇格拉底式輔導老師</h4>
+                            <p class="text-gray-400 mb-3">設定角色，讓AI透過提問引導使用者學習。</p>
+                            <pre class="bg-gray-800 p-4 rounded-md text-gray-300 text-sm whitespace-pre-wrap"><code>你是一位總是以蘇格拉底式(提問對話式風格回答)的導師。你從不直接給學生答案,而是嘗試用正確的問題幫助他們學會獨立思考。你應該根據學生的興趣和知識調整問題,將問題分解成較簡單的部分,直到它達到適合學生的水平。</code></pre>
+                        </div>
+
+                        <!-- Example 2: Interior Designer -->
+                        <div class="content-card p-6 rounded-lg">
+                            <h4 class="text-xl font-bold mb-3">扮演室內設計師</h4>
+                            <p class="text-gray-400 mb-3">要求AI提供專業設計建議。</p>
+                            <pre class="bg-gray-800 p-4 rounded-md text-gray-300 text-sm whitespace-pre-wrap"><code>我希望您能扮演室內設計師的角色。告訴我應該為我選擇的房間(臥室、客廳等)使用什麼樣的主題和設計方法;提供有關色彩搭配、家具擺放和其他裝飾選項的建議,以最適合該主題/設計方法的方式來增強空間的美感和舒適度。我的第一個請求是：「我正在設計我們的客廳」。</code></pre>
+                        </div>
+                        
+                        <!-- Example 3: Lyric Creation -->
+                        <div class="content-card p-6 rounded-lg">
+                            <h4 class="text-xl font-bold mb-3">歌詞創作</h4>
+                            <p class="text-gray-400 mb-3">提供詳細的歌曲元素，讓AI生成歌詞。</p>
+                            <pre class="bg-gray-800 p-4 rounded-md text-gray-300 text-sm whitespace-pre-wrap"><code>請幫我寫出一首歌詞,以[一路相伴]為歌曲名稱,這是一首[folk music]音樂風格的歌,內容描述[與好友長達10年的友情,彼此傾訴心事,一同悲傷、一同快樂,並且成為對方生活及精神最大的支持]。歌曲時長大約2分鐘,歌詞[中文]。段落分為: [Verse1]、[Verse2]、[Chorus]、[Verse3]、[Bridge]、[Chorus],每段約[4]句。</code></pre>
+                        </div>
+
+                        <!-- Example 4: Legal Advisor -->
+                        <div class="content-card p-6 rounded-lg">
+                            <h4 class="text-xl font-bold mb-3">專業法律顧問</h4>
+                             <p class="text-gray-400 mb-3">結合知識庫，設定專業角色並引導互動流程。</p>
+                            <pre class="bg-gray-800 p-4 rounded-md text-gray-300 text-sm whitespace-pre-wrap"><code>你是一位專業的「民法」法律顧問,我會提供你民法法條的檔案作為你的回答依據。當使用者進行詢問時,請搜尋民法法條來回答使用者所詢問的相關問題,並提供專業意見。回答時,請提供相關法條的完整結果。當找不到相關條文時,請判斷是否為刑法或其他法律規範,並告知使用者無法回答。回答後,請進一步詢問使用者是否要透過網路搜尋功能查找相關判例。</code></pre>
+                        </div>
+
+                         <!-- Example 5: Refined Translation -->
+                        <div class="content-card p-6 rounded-lg col-span-1 md:col-span-2">
+                            <h4 class="text-xl font-bold mb-3">精煉翻譯</h4>
+                            <p class="text-gray-400 mb-3">透過設定角色、任務、規則，進行多輪次、高品質的翻譯工作。</p>
+                            <pre class="bg-gray-800 p-4 rounded-md text-gray-300 text-sm whitespace-pre-wrap"><code>#角色:
+你是一位精通英日文的專業中文翻譯專家,曾參與《阿嘉莎·克莉絲蒂作品集》和《江戶川亂步作品集》繁體中文版的翻譯工作,對於偵探小說等通俗作品的翻譯很有心得。
+
+#任務:
+-分成兩次翻譯,第一次翻完再進行第二次翻譯,只要傳回第二次翻譯結果就好:
+ 第一回根據原書內容直譯,不要遺漏任何訊息。
+ 第二回根據第一次直譯的結果重新意譯,遵守原意的前提下讓內容更通俗易懂,符合台灣繁體中文的表達習慣。
+-每回翻譯後,都要重新比對原文,找到扭曲原意或者遺漏的內容,然後再補充到下一回合的翻譯當中。
+
+#規則:
+-翻譯時要準確傳達原文的內容,不要增加或刪減。
+-中文用字盡量淺顯、白話。
+-翻譯時請務必使用台灣本地慣用語和表達習慣。</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Copilot Prompts -->
+                <div class="mt-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">Copilot 影像建立範例</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                         <!-- Example 6: Jewelry Design -->
+                        <div class="content-card p-6 rounded-lg">
+                            <h4 class="text-xl font-bold mb-3">珠寶設計</h4>
+                            <pre class="bg-gray-800 p-4 rounded-md text-gray-300 text-sm whitespace-pre-wrap"><code>一條精緻的精靈月石和蛋白石項鍊,天鵝絨背景,珠寶設計,對稱,複雜的圖案,樹葉,花朵,8k辛烷值渲染,高清攝影,產品攝影</code></pre>
+                        </div>
+                         <!-- Example 7: Interior Design -->
+                        <div class="content-card p-6 rounded-lg">
+                            <h4 class="text-xl font-bold mb-3">室內設計</h4>
+                            <pre class="bg-gray-800 p-4 rounded-md text-gray-300 text-sm whitespace-pre-wrap"><code>寫實風格,透視視角,極簡主義共享工作空間,明亮的裝修和氛圍,精緻的垂直水平線條,極簡主義照明,4500K 間接光和流線型的天花板射燈,專業室內建築攝影</code></pre>
+                        </div>
+                         <!-- Example 8: Watercolor -->
+                        <div class="content-card p-6 rounded-lg">
+                            <h4 class="text-xl font-bold mb-3">水彩暈染</h4>
+                            <pre class="bg-gray-800 p-4 rounded-md text-gray-300 text-sm whitespace-pre-wrap"><code>極簡風格,童趣,水彩暈染,筆觸線條,一面斑駁的粗糙顆粒牆面,藍白相間,牆面下有一位穿紅色衣服小女孩拿著黃色傘,旁邊一隻貓,牆面旁一顆大樹,寧靜美好</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 11: 探索 GPTs -->
+        <section id="gpts" class="scroll-mt-20">
+            <h2 class="text-3xl font-bold mb-6 text-sky-400 border-l-4 border-sky-400 pl-4">探索 GPTs</h2>
+            <div class="content-card p-6 rounded-lg">
+                <p class="text-lg">GPTs 是 ChatGPT 的自訂版本，結合了特定指令、額外知識庫和特定技能組合，專為解決特定任務而設計。使用者可以在 GPT Store 中找到由社群或官方打造的各種 GPTs。</p>
+                <p class="mt-4"><strong>常見分類：</strong></p>
+                <div class="flex flex-wrap gap-2 mt-2">
+                    <span class="bg-sky-500 text-white px-3 py-1 rounded-full text-sm">寫作</span>
+                    <span class="bg-teal-500 text-white px-3 py-1 rounded-full text-sm">生產力</span>
+                    <span class="bg-indigo-500 text-white px-3 py-1 rounded-full text-sm">研究分析</span>
+                    <span class="bg-purple-500 text-white px-3 py-1 rounded-full text-sm">程式設計</span>
+                    <span class="bg-pink-500 text-white px-3 py-1 rounded-full text-sm">教育</span>
+                    <span class="bg-orange-500 text-white px-3 py-1 rounded-full text-sm">日常生活</span>
+                </div>
+                <p class="mt-4"><strong>例如：</strong>你可以使用 <strong class="text-white">Excel GPT</strong> 來協助處理電子表格數據，或使用 <strong class="text-white">Canva GPT</strong> 來快速設計圖片。</p>
+            </div>
+        </section>
+
+        <!-- Section 12: AI 內容檢測 -->
+        <section id="detection" class="scroll-mt-20">
+            <h2 class="text-3xl font-bold mb-6 text-sky-400 border-l-4 border-sky-400 pl-4">AI 內容檢測</h2>
+            <div class="space-y-6">
+                <div class="content-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">C2PA (內容出處與真實性聯盟)</h3>
+                    <p>由微軟、Adobe 等公司創立的技術標準，旨在證明媒體內容的來源與出處。支援 C2PA 的 AI 工具（如 Copilot）會在生成的圖片中嵌入數位簽章，可透過 <a href="https://contentcredentials.org/verify" target="_blank" class="text-sky-400 hover:underline">Content Credentials</a> 等工具進行驗證。</p>
+                </div>
+                <div class="content-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">AI 生成內容偵測工具</h3>
+                    <p>有許多工具可以幫助判斷文字或圖片是否由 AI 生成。例如在 ChatGPT 的 GPT Store 中搜尋 "Detector"，可以找到如 <strong class="text-white">Zero GPT Detector</strong> 等工具，它會分析文本的語言一致性、句法模式等特徵，給出 AI 生成的機率。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 13: AI 的下一步 -->
+        <section id="future" class="scroll-mt-20">
+            <h2 class="text-3xl font-bold mb-6 text-sky-400 border-l-4 border-sky-400 pl-4">AI 的下一步：助理 vs 代理人</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                 <div class="content-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">AI 助理 (AI Assistant)</h3>
+                    <p>通用的、互動的、輔助性的工具，通常由語音或文字觸發，用於執行各種相對簡單的任務。例如：Siri、Google Assistant。</p>
+                    <ul class="list-disc list-inside mt-2 text-gray-300">
+                        <li>目的：協助用戶、提供資訊</li>
+                        <li>互動性：高，通常是對話式</li>
+                        <li>範圍：廣泛但淺顯</li>
+                    </ul>
+                </div>
+                <div class="content-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">AI 代理人 (AI Agent)</h3>
+                    <p>專門的、自主的、適應性的系統，被設計來在特定領域內執行複雜任務，無需持續的人工干預。例如：自動駕駛、金融交易機器人。</p>
+                    <ul class="list-disc list-inside mt-2 text-gray-300">
+                        <li>目的：達成目標、解決問題</li>
+                        <li>自主性：高，能自主決策與學習</li>
+                        <li>範圍：狹窄但深入</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('menu-toggle');
+            const sidebar = document.getElementById('sidebar');
+            const mainContent = document.querySelector('main');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section');
+
+            // Mobile menu toggle
+            menuToggle.addEventListener('click', () => {
+                sidebar.classList.toggle('-translate-x-full');
+            });
+
+            // Close sidebar when clicking on main content
+            mainContent.addEventListener('click', () => {
+                sidebar.classList.add('-translate-x-full');
+            });
+            
+            // Close sidebar when a nav link is clicked on mobile
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth < 768) {
+                        sidebar.classList.add('-translate-x-full');
+                    }
+                });
+            });
+
+            // Active nav link highlighting on scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, { rootMargin: '-50% 0px -50% 0px', threshold: 0 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
+
