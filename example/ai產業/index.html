@@ -1,0 +1,713 @@
+
+<!DOCTYPE html><html lang="zh-TW" class="scroll-smooth dark"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台灣AI概念股分析與行情</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/preline@2.3.0/dist/preline.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Noto+Sans+TC:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans TC', 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .chart-container { min-height: 400px; }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+        .hero-pattern { background-image: radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%); }
+        .glass-card { backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); }
+    </style>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#667eea',
+                        secondary: '#764ba2'
+                    }
+                }
+            }
+        }
+    </script>
+<script src="https://felo.ai/js/iframe.js?v=1759997788896"></script>
+ <style>
+* {
+  scrollbar-width: thin !important;
+  scrollbar-color: #bfc5ce transparent !important;
+}
+*::-webkit-scrollbar {
+  width: 6px !important;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #bfc5ce !important;
+  border-radius: 9999px !important;
+}
+*::-webkit-scrollbar-track {
+  background-color: transparent !important;
+  border-radius: 9999px !important;
+}
+</style><style id="felo-iframe-styles">html,body{margin:0 !important;padding:0 !important;}</style></head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300" contenteditable="false" spellcheck="false">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-chart-line text-2xl text-primary"></i>
+                    <span class="text-xl font-bold text-gray-900 dark:text-white">台灣AI概念股</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#overview" class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors">概覽</a>
+                    <a href="#categories" class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors">分類</a>
+                    <a href="#performance" class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors">市場表現</a>
+                    <a href="#outlook" class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors" data-element-id="d20b4546-e39e-42c3-9170-86cb054bef18">投資展望</a>
+                </div>
+                <button id="darkModeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                    <i class="fas fa-sun dark:hidden"></i>
+                    <i class="fas fa-moon hidden dark:inline"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="overview" class="relative min-h-screen flex items-center justify-center gradient-bg hero-pattern">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20" data-element-id="02fb3411-a2b8-41e9-8659-8da499e64781"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-element-id="5ae2e426-1853-4635-889e-fa3e4cef2bb9">
+            <div class="mb-8 animate-float">
+                <img src="https://api.felo.ai/images/s/iUfQOPe4bx" alt="台灣AI概念股產業鏈心智圖" class="mx-auto rounded-2xl shadow-2xl max-w-full h-auto" data-element-id="81d240c0-8a86-480c-963c-3ddd1de27ec4">
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                台灣AI概念股
+                <span class="block text-3xl md:text-5xl font-light text-blue-200">分類與行情分析</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed">
+                從上游晶片設計到下游應用服務的完整產業鏈分析，涵蓋台積電、聯發科、廣達等重點企業的市場表現與投資展望
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div class="glass-card rounded-xl p-6 text-center" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                    <div class="text-3xl font-bold text-white mb-2">70.49%</div>
+                    <div class="text-blue-200">6個月累積報酬</div>
+                </div>
+                <div class="glass-card rounded-xl p-6 text-center" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                    <div class="text-3xl font-bold text-white mb-2">95.4%</div>
+                    <div class="text-blue-200">生成式AI支出複合成長率</div>
+                </div>
+                <div class="glass-card rounded-xl p-6 text-center" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                    <div class="text-3xl font-bold text-white mb-2">2.5兆</div>
+                    <div class="text-blue-200">2032年全球AI產值(美元)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="py-20 bg-white dark:bg-gray-900" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">AI概念股主要分類</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">台灣AI概念股涵蓋完整產業鏈，從晶片設計製造到伺服器組裝，都有具競爭力的廠商參與</p>
+            </div>
+
+            <!-- Industry Chain Diagram -->
+            <div class="mb-16">
+                <div class="mermaid bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg" data-processed="true" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;"><svg aria-roledescription="flowchart-v2" role="graphics-document document" viewBox="-8 -8 2091.59375 233" style="max-width: 2091.59375px;" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="100%" id="mermaid-1759997787489"><style style="pointer-events: none;">#mermaid-1759997787489{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#ccc;}#mermaid-1759997787489 .error-icon{fill:#a44141;}#mermaid-1759997787489 .error-text{fill:#ddd;stroke:#ddd;}#mermaid-1759997787489 .edge-thickness-normal{stroke-width:2px;}#mermaid-1759997787489 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-1759997787489 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-1759997787489 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-1759997787489 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-1759997787489 .marker{fill:#764ba2;stroke:#764ba2;}#mermaid-1759997787489 .marker.cross{stroke:#764ba2;}#mermaid-1759997787489 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-1759997787489 .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#ccc;}#mermaid-1759997787489 .cluster-label text{fill:#F9FFFE;}#mermaid-1759997787489 .cluster-label span,#mermaid-1759997787489 p{color:#F9FFFE;}#mermaid-1759997787489 .label text,#mermaid-1759997787489 span,#mermaid-1759997787489 p{fill:#ccc;color:#ccc;}#mermaid-1759997787489 .node rect,#mermaid-1759997787489 .node circle,#mermaid-1759997787489 .node ellipse,#mermaid-1759997787489 .node polygon,#mermaid-1759997787489 .node path{fill:#1f2020;stroke:#81B1DB;stroke-width:1px;}#mermaid-1759997787489 .flowchart-label text{text-anchor:middle;}#mermaid-1759997787489 .node .label{text-align:center;}#mermaid-1759997787489 .node.clickable{cursor:pointer;}#mermaid-1759997787489 .arrowheadPath{fill:lightgrey;}#mermaid-1759997787489 .edgePath .path{stroke:#764ba2;stroke-width:2.0px;}#mermaid-1759997787489 .flowchart-link{stroke:#764ba2;fill:none;}#mermaid-1759997787489 .edgeLabel{background-color:hsl(0, 0%, 34.4117647059%);text-align:center;}#mermaid-1759997787489 .edgeLabel rect{opacity:0.5;background-color:hsl(0, 0%, 34.4117647059%);fill:hsl(0, 0%, 34.4117647059%);}#mermaid-1759997787489 .labelBkg{background-color:rgba(87.75, 87.75, 87.75, 0.5);}#mermaid-1759997787489 .cluster rect{fill:hsl(180, 1.5873015873%, 28.3529411765%);stroke:rgba(255, 255, 255, 0.25);stroke-width:1px;}#mermaid-1759997787489 .cluster text{fill:#F9FFFE;}#mermaid-1759997787489 .cluster span,#mermaid-1759997787489 p{color:#F9FFFE;}#mermaid-1759997787489 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(20, 1.5873015873%, 12.3529411765%);border:1px solid rgba(255, 255, 255, 0.25);border-radius:2px;pointer-events:none;z-index:100;}#mermaid-1759997787489 .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#ccc;}#mermaid-1759997787489 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g style="pointer-events: none;"><marker orient="auto" markerHeight="12" markerWidth="12" markerUnits="userSpaceOnUse" refY="5" refX="6" viewBox="0 0 10 10" class="marker flowchart" id="mermaid-1759997787489_flowchart-pointEnd" style="pointer-events: none;"><path style="stroke-width: 1; stroke-dasharray: 1, 0; pointer-events: none;" class="arrowMarkerPath" d="M 0 0 L 10 5 L 0 10 z"></path></marker><marker orient="auto" markerHeight="12" markerWidth="12" markerUnits="userSpaceOnUse" refY="5" refX="4.5" viewBox="0 0 10 10" class="marker flowchart" id="mermaid-1759997787489_flowchart-pointStart" style="pointer-events: none;"><path style="stroke-width: 1; stroke-dasharray: 1, 0; pointer-events: none;" class="arrowMarkerPath" d="M 0 5 L 10 10 L 10 0 z"></path></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5" refX="11" viewBox="0 0 10 10" class="marker flowchart" id="mermaid-1759997787489_flowchart-circleEnd" style="pointer-events: none;"><circle style="stroke-width: 1; stroke-dasharray: 1, 0; pointer-events: none;" class="arrowMarkerPath" r="5" cy="5" cx="5"></circle></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5" refX="-1" viewBox="0 0 10 10" class="marker flowchart" id="mermaid-1759997787489_flowchart-circleStart" style="pointer-events: none;"><circle style="stroke-width: 1; stroke-dasharray: 1, 0; pointer-events: none;" class="arrowMarkerPath" r="5" cy="5" cx="5"></circle></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5.2" refX="12" viewBox="0 0 11 11" class="marker cross flowchart" id="mermaid-1759997787489_flowchart-crossEnd" style="pointer-events: none;"><path style="stroke-width: 2; stroke-dasharray: 1, 0; pointer-events: none;" class="arrowMarkerPath" d="M 1,1 l 9,9 M 10,1 l -9,9"></path></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5.2" refX="-1" viewBox="0 0 11 11" class="marker cross flowchart" id="mermaid-1759997787489_flowchart-crossStart" style="pointer-events: none;"><path style="stroke-width: 2; stroke-dasharray: 1, 0; pointer-events: none;" class="arrowMarkerPath" d="M 1,1 l 9,9 M 10,1 l -9,9"></path></marker><g class="root" style="pointer-events: none;"><g class="clusters" style="pointer-events: none;"></g><g class="edgePaths" style="pointer-events: none;"><path marker-end="url(#mermaid-1759997787489_flowchart-pointEnd)" style="fill: none; pointer-events: none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-A LE-B" id="L-A-B-0" d="M394.547,28.707L364.201,34.589C333.854,40.471,273.161,52.236,242.815,61.401C212.469,70.567,212.469,77.133,212.469,80.417L212.469,83.7"></path><path marker-end="url(#mermaid-1759997787489_flowchart-pointEnd)" style="fill: none; pointer-events: none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-A LE-C" id="L-A-C-0" d="M489.547,28.707L519.893,34.589C550.24,40.471,610.932,52.236,641.279,61.401C671.625,70.567,671.625,77.133,671.625,80.417L671.625,83.7"></path><path marker-end="url(#mermaid-1759997787489_flowchart-pointEnd)" style="fill: none; pointer-events: none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-B LE-D" id="L-B-D-0" d="M148.969,126.349L133.167,130.791C117.365,135.233,85.76,144.116,69.958,151.842C54.156,159.567,54.156,166.133,54.156,169.417L54.156,172.7"></path><path marker-end="url(#mermaid-1759997787489_flowchart-pointEnd)" style="fill: none; pointer-events: none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-B LE-E" id="L-B-E-0" d="M212.469,128L212.469,132.167C212.469,136.333,212.469,144.667,212.469,152.117C212.469,159.567,212.469,166.133,212.469,169.417L212.469,172.7"></path><path marker-end="url(#mermaid-1759997787489_flowchart-pointEnd)" style="fill: none; pointer-events: none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-B LE-F" id="L-B-F-0" d="M275.969,125.898L292.456,130.415C308.943,134.932,341.917,143.966,358.404,151.766C374.891,159.567,374.891,166.133,374.891,169.417L374.891,172.7"></path><path marker-end="url(#mermaid-1759997787489_flowchart-pointEnd)" style="fill: none; pointer-events: none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-C LE-G" id="L-C-G-0" d="M609.263,128L595.938,132.167C582.613,136.333,555.963,144.667,542.638,152.117C529.313,159.567,529.313,166.133,529.313,169.417L529.313,172.7"></path><path marker-end="url(#mermaid-1759997787489_flowchart-pointEnd)" style="fill: none; pointer-events: none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-C LE-H" id="L-C-H-0" d="M671.625,128L671.625,132.167C671.625,136.333,671.625,144.667,671.625,152.117C671.625,159.567,671.625,166.133,671.625,169.417L671.625,172.7"></path><path marker-end="url(#mermaid-1759997787489_flowchart-pointEnd)" style="fill: none; pointer-events: none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-C LE-I" id="L-C-I-0" d="M733.987,128L747.312,132.167C760.637,136.333,787.287,144.667,800.612,152.117C813.938,159.567,813.938,166.133,813.938,169.417L813.938,172.7"></path><path marker-end="url(#mermaid-1759997787489_flowchart-pointEnd)" style="fill: none; pointer-events: none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-J LE-K" id="L-J-K-0" d="M1280.531,28.711L1250.203,34.593C1219.875,40.474,1159.219,52.237,1128.891,61.402C1098.563,70.567,1098.563,77.133,1098.563,80.417L1098.563,83.7"></path><path marker-end="url(#mermaid-1759997787489_flowchart-pointEnd)" style="fill: none; pointer-events: none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-J LE-L" id="L-J-L-0" d="M1375.531,28.711L1405.859,34.593C1436.188,40.474,1496.844,52.237,1527.172,61.402C1557.5,70.567,1557.5,77.133,1557.5,80.417L1557.5,83.7"></path><path marker-end="url(#mermaid-1759997787489_flowchart-pointEnd)" style="fill: none; pointer-events: none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-K LE-M" id="L-K-M-0" d="M1043.063,125.854L1028.594,130.379C1014.125,134.903,985.188,143.951,970.719,151.759C956.25,159.567,956.25,166.133,956.25,169.417L956.25,172.7"></path><path marker-end="url(#mermaid-1759997787489_flowchart-pointEnd)" style="fill: none; pointer-events: none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-K LE-N" id="L-K-N-0" d="M1098.563,128L1098.563,132.167C1098.563,136.333,1098.563,144.667,1098.563,152.117C1098.563,159.567,1098.563,166.133,1098.563,169.417L1098.563,172.7"></path><path marker-end="url(#mermaid-1759997787489_flowchart-pointEnd)" style="fill: none; pointer-events: none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-K LE-O" id="L-K-O-0" d="M1154.063,124.931L1169.865,129.609C1185.667,134.287,1217.271,143.644,1233.073,151.605C1248.875,159.567,1248.875,166.133,1248.875,169.417L1248.875,172.7"></path><path marker-end="url(#mermaid-1759997787489_flowchart-pointEnd)" style="fill: none; pointer-events: none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-L LE-P" id="L-L-P-0" d="M1510,122.562L1492.865,127.635C1475.729,132.708,1441.458,142.854,1424.323,151.21C1407.188,159.567,1407.188,166.133,1407.188,169.417L1407.188,172.7"></path><path marker-end="url(#mermaid-1759997787489_flowchart-pointEnd)" style="fill: none; pointer-events: none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-L LE-Q" id="L-L-Q-0" d="M1557.5,128L1557.5,132.167C1557.5,136.333,1557.5,144.667,1557.5,152.117C1557.5,159.567,1557.5,166.133,1557.5,169.417L1557.5,172.7"></path><path marker-end="url(#mermaid-1759997787489_flowchart-pointEnd)" style="fill: none; pointer-events: none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-L LE-R" id="L-L-R-0" d="M1605,123.353L1620.802,128.294C1636.604,133.235,1668.208,143.118,1684.01,151.342C1699.813,159.567,1699.813,166.133,1699.813,169.417L1699.813,172.7"></path><path marker-end="url(#mermaid-1759997787489_flowchart-pointEnd)" style="fill: none; pointer-events: none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-S LE-T" id="L-S-T-0" d="M1958.896,39L1953.28,43.167C1947.665,47.333,1936.434,55.667,1930.819,63.117C1925.203,70.567,1925.203,77.133,1925.203,80.417L1925.203,83.7"></path><path marker-end="url(#mermaid-1759997787489_flowchart-pointEnd)" style="fill: none; pointer-events: none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-S LE-U" id="L-S-U-0" d="M2011.456,39L2017.071,43.167C2022.687,47.333,2033.918,55.667,2039.533,63.117C2045.148,70.567,2045.148,77.133,2045.148,80.417L2045.148,83.7"></path><path marker-end="url(#mermaid-1759997787489_flowchart-pointEnd)" style="fill: none; pointer-events: none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-T LE-V" id="L-T-V-0" d="M1885.703,125.124L1874.664,129.77C1863.625,134.416,1841.547,143.708,1830.508,151.637C1819.469,159.567,1819.469,166.133,1819.469,169.417L1819.469,172.7"></path><path marker-end="url(#mermaid-1759997787489_flowchart-pointEnd)" style="fill: none; pointer-events: none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-T LE-W" id="L-T-W-0" d="M1925.203,128L1925.203,132.167C1925.203,136.333,1925.203,144.667,1925.203,152.117C1925.203,159.567,1925.203,166.133,1925.203,169.417L1925.203,172.7"></path><path marker-end="url(#mermaid-1759997787489_flowchart-pointEnd)" style="fill: none; pointer-events: none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-T LE-X" id="L-T-X-0" d="M1964.703,123.955L1977.076,128.796C1989.448,133.637,2014.193,143.318,2026.565,151.442C2038.938,159.567,2038.938,166.133,2038.938,169.417L2038.938,172.7"></path></g><g class="edgeLabels" style="pointer-events: none;"><g class="edgeLabel" style="pointer-events: none;"><g transform="translate(0, 0)" class="label" style="pointer-events: none;"><foreignObject height="0" width="0" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel" style="pointer-events: none;"></span></div></foreignObject></g></g><g class="edgeLabel" style="pointer-events: none;"><g transform="translate(0, 0)" class="label" style="pointer-events: none;"><foreignObject height="0" width="0" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel" style="pointer-events: none;"></span></div></foreignObject></g></g><g class="edgeLabel" style="pointer-events: none;"><g transform="translate(0, 0)" class="label" style="pointer-events: none;"><foreignObject height="0" width="0" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel" style="pointer-events: none;"></span></div></foreignObject></g></g><g class="edgeLabel" style="pointer-events: none;"><g transform="translate(0, 0)" class="label" style="pointer-events: none;"><foreignObject height="0" width="0" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel" style="pointer-events: none;"></span></div></foreignObject></g></g><g class="edgeLabel" style="pointer-events: none;"><g transform="translate(0, 0)" class="label" style="pointer-events: none;"><foreignObject height="0" width="0" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel" style="pointer-events: none;"></span></div></foreignObject></g></g><g class="edgeLabel" style="pointer-events: none;"><g transform="translate(0, 0)" class="label" style="pointer-events: none;"><foreignObject height="0" width="0" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel" style="pointer-events: none;"></span></div></foreignObject></g></g><g class="edgeLabel" style="pointer-events: none;"><g transform="translate(0, 0)" class="label" style="pointer-events: none;"><foreignObject height="0" width="0" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel" style="pointer-events: none;"></span></div></foreignObject></g></g><g class="edgeLabel" style="pointer-events: none;"><g transform="translate(0, 0)" class="label" style="pointer-events: none;"><foreignObject height="0" width="0" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel" style="pointer-events: none;"></span></div></foreignObject></g></g><g class="edgeLabel" style="pointer-events: none;"><g transform="translate(0, 0)" class="label" style="pointer-events: none;"><foreignObject height="0" width="0" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel" style="pointer-events: none;"></span></div></foreignObject></g></g><g class="edgeLabel" style="pointer-events: none;"><g transform="translate(0, 0)" class="label" style="pointer-events: none;"><foreignObject height="0" width="0" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel" style="pointer-events: none;"></span></div></foreignObject></g></g><g class="edgeLabel" style="pointer-events: none;"><g transform="translate(0, 0)" class="label" style="pointer-events: none;"><foreignObject height="0" width="0" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel" style="pointer-events: none;"></span></div></foreignObject></g></g><g class="edgeLabel" style="pointer-events: none;"><g transform="translate(0, 0)" class="label" style="pointer-events: none;"><foreignObject height="0" width="0" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel" style="pointer-events: none;"></span></div></foreignObject></g></g><g class="edgeLabel" style="pointer-events: none;"><g transform="translate(0, 0)" class="label" style="pointer-events: none;"><foreignObject height="0" width="0" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel" style="pointer-events: none;"></span></div></foreignObject></g></g><g class="edgeLabel" style="pointer-events: none;"><g transform="translate(0, 0)" class="label" style="pointer-events: none;"><foreignObject height="0" width="0" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel" style="pointer-events: none;"></span></div></foreignObject></g></g><g class="edgeLabel" style="pointer-events: none;"><g transform="translate(0, 0)" class="label" style="pointer-events: none;"><foreignObject height="0" width="0" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel" style="pointer-events: none;"></span></div></foreignObject></g></g><g class="edgeLabel" style="pointer-events: none;"><g transform="translate(0, 0)" class="label" style="pointer-events: none;"><foreignObject height="0" width="0" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel" style="pointer-events: none;"></span></div></foreignObject></g></g><g class="edgeLabel" style="pointer-events: none;"><g transform="translate(0, 0)" class="label" style="pointer-events: none;"><foreignObject height="0" width="0" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel" style="pointer-events: none;"></span></div></foreignObject></g></g><g class="edgeLabel" style="pointer-events: none;"><g transform="translate(0, 0)" class="label" style="pointer-events: none;"><foreignObject height="0" width="0" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel" style="pointer-events: none;"></span></div></foreignObject></g></g><g class="edgeLabel" style="pointer-events: none;"><g transform="translate(0, 0)" class="label" style="pointer-events: none;"><foreignObject height="0" width="0" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel" style="pointer-events: none;"></span></div></foreignObject></g></g><g class="edgeLabel" style="pointer-events: none;"><g transform="translate(0, 0)" class="label" style="pointer-events: none;"><foreignObject height="0" width="0" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel" style="pointer-events: none;"></span></div></foreignObject></g></g><g class="edgeLabel" style="pointer-events: none;"><g transform="translate(0, 0)" class="label" style="pointer-events: none;"><foreignObject height="0" width="0" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel" style="pointer-events: none;"></span></div></foreignObject></g></g></g><g class="nodes" style="pointer-events: none;"><g transform="translate(442.046875, 19.5)" id="flowchart-A-0" class="node default default flowchart-label" style="pointer-events: none;"><rect height="39" width="95" y="-19.5" x="-47.5" ry="0" rx="0" style="fill: rgb(102, 126, 234); stroke: rgb(255, 255, 255); stroke-width: 2px; pointer-events: none;" class="basic label-container"></rect><g transform="translate(-40, -12)" style="color: rgb(255, 255, 255); pointer-events: none;" class="label"><rect style="pointer-events: none;"></rect><foreignObject height="24" width="80" style="pointer-events: none;"><div xmlns="http://www.w3.org/1999/xhtml" style="color: rgb(255, 255, 255); display: inline-block; white-space: nowrap; pointer-events: none;"><span style="color: rgb(255, 255, 255); pointer-events: none;" class="nodeLabel">上游供應鏈</span></div></foreignObject></g></g><g transform="translate(212.46875, 108.5)" id="flowchart-B-1" class="node default default flowchart-label" style="pointer-events: none;"><rect height="39" width="127" y="-19.5" x="-63.5" ry="0" rx="0" style="pointer-events: none;" class="basic label-container"></rect><g transform="translate(-56, -12)" style="pointer-events: none;" class="label"><rect style="pointer-events: none;"></rect><foreignObject height="24" width="112" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel" style="pointer-events: none;">晶片設計與製造</span></div></foreignObject></g></g><g transform="translate(671.625, 108.5)" id="flowchart-C-3" class="node default default flowchart-label" style="pointer-events: none;"><rect height="39" width="125.03125" y="-19.5" x="-62.515625" ry="0" rx="0" style="pointer-events: none;" class="basic label-container"></rect><g transform="translate(-55.015625, -12)" style="pointer-events: none;" class="label"><rect style="pointer-events: none;"></rect><foreignObject height="24" width="110.03125" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel" style="pointer-events: none;">記憶體與相關IC</span></div></foreignObject></g></g><g transform="translate(54.15625, 197.5)" id="flowchart-D-5" class="node default default flowchart-label" style="pointer-events: none;"><rect height="39" width="108.3125" y="-19.5" x="-54.15625" ry="0" rx="0" style="pointer-events: none;" class="basic label-container"></rect><g transform="translate(-46.65625, -12)" style="pointer-events: none;" class="label"><rect style="pointer-events: none;"></rect><foreignObject height="24" width="93.3125" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel" style="pointer-events: none;">台積電(2330)</span></div></foreignObject></g></g><g transform="translate(212.46875, 197.5)" id="flowchart-E-7" class="node default default flowchart-label" style="pointer-events: none;"><rect height="39" width="108.3125" y="-19.5" x="-54.15625" ry="0" rx="0" style="pointer-events: none;" class="basic label-container"></rect><g transform="translate(-46.65625, -12)" style="pointer-events: none;" class="label"><rect style="pointer-events: none;"></rect><foreignObject height="24" width="93.3125" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel" style="pointer-events: none;">聯發科(2454)</span></div></foreignObject></g></g><g transform="translate(374.890625, 197.5)" id="flowchart-F-9" class="node default default flowchart-label" style="pointer-events: none;"><rect height="39" width="116.53125" y="-19.5" x="-58.265625" ry="0" rx="0" style="pointer-events: none;" class="basic label-container"></rect><g transform="translate(-50.765625, -12)" style="pointer-events: none;" class="label"><rect style="pointer-events: none;"></rect><foreignObject height="24" width="101.53125" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel" style="pointer-events: none;">世芯-KY(3661)</span></div></foreignObject></g></g><g transform="translate(529.3125, 197.5)" id="flowchart-G-11" class="node default default flowchart-label" style="pointer-events: none;"><rect height="39" width="92.3125" y="-19.5" x="-46.15625" ry="0" rx="0" style="pointer-events: none;" class="basic label-container"></rect><g transform="translate(-38.65625, -12)" style="pointer-events: none;" class="label"><rect style="pointer-events: none;"></rect><foreignObject height="24" width="77.3125" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel" style="pointer-events: none;">智原(3035)</span></div></foreignObject></g></g><g transform="translate(671.625, 197.5)" id="flowchart-H-13" class="node default default flowchart-label" style="pointer-events: none;"><rect height="39" width="92.3125" y="-19.5" x="-46.15625" ry="0" rx="0" style="pointer-events: none;" class="basic label-container"></rect><g transform="translate(-38.65625, -12)" style="pointer-events: none;" class="label"><rect style="pointer-events: none;"></rect><foreignObject height="24" width="77.3125" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel" style="pointer-events: none;">創意(3443)</span></div></foreignObject></g></g><g transform="translate(813.9375, 197.5)" id="flowchart-I-15" class="node default default flowchart-label" style="pointer-events: none;"><rect height="39" width="92.3125" y="-19.5" x="-46.15625" ry="0" rx="0" style="pointer-events: none;" class="basic label-container"></rect><g transform="translate(-38.65625, -12)" style="pointer-events: none;" class="label"><rect style="pointer-events: none;"></rect><foreignObject height="24" width="77.3125" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel" style="pointer-events: none;">新唐(4919)</span></div></foreignObject></g></g><g transform="translate(1328.03125, 19.5)" id="flowchart-J-16" class="node default default flowchart-label" style="pointer-events: none;"><rect height="39" width="95" y="-19.5" x="-47.5" ry="0" rx="0" style="fill: rgb(118, 75, 162); stroke: rgb(255, 255, 255); stroke-width: 2px; pointer-events: none;" class="basic label-container"></rect><g transform="translate(-40, -12)" style="color: rgb(255, 255, 255); pointer-events: none;" class="label"><rect style="pointer-events: none;"></rect><foreignObject height="24" width="80" style="pointer-events: none;"><div xmlns="http://www.w3.org/1999/xhtml" style="color: rgb(255, 255, 255); display: inline-block; white-space: nowrap; pointer-events: none;"><span style="color: rgb(255, 255, 255); pointer-events: none;" class="nodeLabel">中游供應鏈</span></div></foreignObject></g></g><g transform="translate(1098.5625, 108.5)" id="flowchart-K-17" class="node default default flowchart-label" style="pointer-events: none;"><rect height="39" width="111" y="-19.5" x="-55.5" ry="0" rx="0" style="pointer-events: none;" class="basic label-container"></rect><g transform="translate(-48, -12)" style="pointer-events: none;" class="label"><rect style="pointer-events: none;"></rect><foreignObject height="24" width="96" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel" style="pointer-events: none;">伺服器代工廠</span></div></foreignObject></g></g><g transform="translate(1557.5, 108.5)" id="flowchart-L-19" class="node default default flowchart-label" style="pointer-events: none;"><rect height="39" width="95" y="-19.5" x="-47.5" ry="0" rx="0" style="pointer-events: none;" class="basic label-container"></rect><g transform="translate(-40, -12)" style="pointer-events: none;" class="label"><rect style="pointer-events: none;"></rect><foreignObject height="24" width="80" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel" style="pointer-events: none;">關鍵零組件</span></div></foreignObject></g></g><g transform="translate(956.25, 197.5)" id="flowchart-M-21" class="node default default flowchart-label" style="pointer-events: none;"><rect height="39" width="92.3125" y="-19.5" x="-46.15625" ry="0" rx="0" style="pointer-events: none;" class="basic label-container"></rect><g transform="translate(-38.65625, -12)" style="pointer-events: none;" class="label"><rect style="pointer-events: none;"></rect><foreignObject height="24" width="77.3125" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel" style="pointer-events: none;">廣達(2382)</span></div></foreignObject></g></g><g transform="translate(1098.5625, 197.5)" id="flowchart-N-23" class="node default default flowchart-label" style="pointer-events: none;"><rect height="39" width="92.3125" y="-19.5" x="-46.15625" ry="0" rx="0" style="pointer-events: none;" class="basic label-container"></rect><g transform="translate(-38.65625, -12)" style="pointer-events: none;" class="label"><rect style="pointer-events: none;"></rect><foreignObject height="24" width="77.3125" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel" style="pointer-events: none;">緯穎(6669)</span></div></foreignObject></g></g><g transform="translate(1248.875, 197.5)" id="flowchart-O-25" class="node default default flowchart-label" style="pointer-events: none;"><rect height="39" width="108.3125" y="-19.5" x="-54.15625" ry="0" rx="0" style="pointer-events: none;" class="basic label-container"></rect><g transform="translate(-46.65625, -12)" style="pointer-events: none;" class="label"><rect style="pointer-events: none;"></rect><foreignObject height="24" width="93.3125" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel" style="pointer-events: none;">英業達(2356)</span></div></foreignObject></g></g><g transform="translate(1407.1875, 197.5)" id="flowchart-P-27" class="node default default flowchart-label" style="pointer-events: none;"><rect height="39" width="108.3125" y="-19.5" x="-54.15625" ry="0" rx="0" style="pointer-events: none;" class="basic label-container"></rect><g transform="translate(-46.65625, -12)" style="pointer-events: none;" class="label"><rect style="pointer-events: none;"></rect><foreignObject height="24" width="93.3125" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel" style="pointer-events: none;">台達電(2308)</span></div></foreignObject></g></g><g transform="translate(1557.5, 197.5)" id="flowchart-Q-29" class="node default default flowchart-label" style="pointer-events: none;"><rect height="39" width="92.3125" y="-19.5" x="-46.15625" ry="0" rx="0" style="pointer-events: none;" class="basic label-container"></rect><g transform="translate(-38.65625, -12)" style="pointer-events: none;" class="label"><rect style="pointer-events: none;"></rect><foreignObject height="24" width="77.3125" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel" style="pointer-events: none;">雙鴻(3324)</span></div></foreignObject></g></g><g transform="translate(1699.8125, 197.5)" id="flowchart-R-31" class="node default default flowchart-label" style="pointer-events: none;"><rect height="39" width="92.3125" y="-19.5" x="-46.15625" ry="0" rx="0" style="pointer-events: none;" class="basic label-container"></rect><g transform="translate(-38.65625, -12)" style="pointer-events: none;" class="label"><rect style="pointer-events: none;"></rect><foreignObject height="24" width="77.3125" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel" style="pointer-events: none;">欣興(3037)</span></div></foreignObject></g></g><g transform="translate(1985.17578125, 19.5)" id="flowchart-S-32" class="node default default flowchart-label" style="pointer-events: none;"><rect height="39" width="127" y="-19.5" x="-63.5" ry="0" rx="0" style="fill: rgb(240, 147, 251); stroke: rgb(255, 255, 255); stroke-width: 2px; pointer-events: none;" class="basic label-container"></rect><g transform="translate(-56, -12)" style="color: rgb(255, 255, 255); pointer-events: none;" class="label"><rect style="pointer-events: none;"></rect><foreignObject height="24" width="112" style="pointer-events: none;"><div xmlns="http://www.w3.org/1999/xhtml" style="color: rgb(255, 255, 255); display: inline-block; white-space: nowrap; pointer-events: none;"><span style="color: rgb(255, 255, 255); pointer-events: none;" class="nodeLabel">下游應用與服務</span></div></foreignObject></g></g><g transform="translate(1925.203125, 108.5)" id="flowchart-T-33" class="node default default flowchart-label" style="pointer-events: none;"><rect height="39" width="79" y="-19.5" x="-39.5" ry="0" rx="0" style="pointer-events: none;" class="basic label-container"></rect><g transform="translate(-32, -12)" style="pointer-events: none;" class="label"><rect style="pointer-events: none;"></rect><foreignObject height="24" width="64" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel" style="pointer-events: none;">軟體服務</span></div></foreignObject></g></g><g transform="translate(2045.1484375, 108.5)" id="flowchart-U-35" class="node default default flowchart-label" style="pointer-events: none;"><rect height="39" width="60.890625" y="-19.5" x="-30.4453125" ry="0" rx="0" style="pointer-events: none;" class="basic label-container"></rect><g transform="translate(-22.9453125, -12)" style="pointer-events: none;" class="label"><rect style="pointer-events: none;"></rect><foreignObject height="24" width="45.890625" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel" style="pointer-events: none;">AI應用</span></div></foreignObject></g></g><g transform="translate(1819.46875, 197.5)" id="flowchart-V-37" class="node default default flowchart-label" style="pointer-events: none;"><rect height="39" width="47" y="-19.5" x="-23.5" ry="0" rx="0" style="pointer-events: none;" class="basic label-container"></rect><g transform="translate(-16, -12)" style="pointer-events: none;" class="label"><rect style="pointer-events: none;"></rect><foreignObject height="24" width="32" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel" style="pointer-events: none;">微軟</span></div></foreignObject></g></g><g transform="translate(1925.203125, 197.5)" id="flowchart-W-39" class="node default default flowchart-label" style="pointer-events: none;"><rect height="39" width="64.46875" y="-19.5" x="-32.234375" ry="0" rx="0" style="pointer-events: none;" class="basic label-container"></rect><g transform="translate(-24.734375, -12)" style="pointer-events: none;" class="label"><rect style="pointer-events: none;"></rect><foreignObject height="24" width="49.46875" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel" style="pointer-events: none;">Google</span></div></foreignObject></g></g><g transform="translate(2038.9375, 197.5)" id="flowchart-X-41" class="node default default flowchart-label" style="pointer-events: none;"><rect height="39" width="63" y="-19.5" x="-31.5" ry="0" rx="0" style="pointer-events: none;" class="basic label-container"></rect><g transform="translate(-24, -12)" style="pointer-events: none;" class="label"><rect style="pointer-events: none;"></rect><foreignObject height="24" width="48" style="pointer-events: none;"><div style="display: inline-block; white-space: nowrap; pointer-events: none;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel" style="pointer-events: none;">亞馬遜</span></div></foreignObject></g></g></g></g></g></svg></div>
+            </div>
+
+            <!-- Upstream Companies -->
+            <div class="mb-16">
+                <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">上游供應鏈（晶片設計與製造）</h3>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8">
+                        <h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">晶片設計與製造</h4>
+                        <div class="space-y-6">
+                            <div class="bg-white dark:bg-gray-600 rounded-xl p-6 shadow-md" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                                <div class="flex justify-between items-start mb-4">
+                                    <h5 class="text-xl font-bold text-gray-900 dark:text-white">台積電 (2330)</h5>
+                                    <span class="text-2xl font-bold text-green-600">1,440元</span>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-300 mb-2">全球晶圓代工龍頭</p>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">市值：32.8兆新台幣</p>
+                            </div>
+                            <div class="bg-white dark:bg-gray-600 rounded-xl p-6 shadow-md" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                                <div class="flex justify-between items-start mb-4">
+                                    <h5 class="text-xl font-bold text-gray-900 dark:text-white">聯發科 (2454)</h5>
+                                    <span class="text-2xl font-bold text-green-600">1,440元</span>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-300 mb-2">行動晶片設計大廠，積極布局AI晶片</p>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">市值：2.31兆新台幣</p>
+                            </div>
+                            <div class="bg-white dark:bg-gray-600 rounded-xl p-6 shadow-md" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                                <div class="flex justify-between items-start mb-4">
+                                    <h5 class="text-xl font-bold text-gray-900 dark:text-white">世芯-KY (3661)</h5>
+                                    <span class="text-2xl font-bold text-green-600">3,750元</span>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-300 mb-2">ASIC客製化晶片設計服務</p>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">2024年營收：682億新台幣，年增超過50%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-br from-purple-50 to-pink-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8">
+                        <h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">記憶體與相關IC</h4>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-white dark:bg-gray-600 rounded-xl p-4 text-center shadow-md" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                                <h5 class="font-bold text-gray-900 dark:text-white">智原 (3035)</h5>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">矽智財公司</p>
+                            </div>
+                            <div class="bg-white dark:bg-gray-600 rounded-xl p-4 text-center shadow-md" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                                <h5 class="font-bold text-gray-900 dark:text-white">創意 (3443)</h5>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">矽智財公司</p>
+                            </div>
+                            <div class="bg-white dark:bg-gray-600 rounded-xl p-4 text-center shadow-md" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                                <h5 class="font-bold text-gray-900 dark:text-white">新唐 (4919)</h5>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">晶片管理廠商</p>
+                            </div>
+                            <div class="bg-white dark:bg-gray-600 rounded-xl p-4 text-center shadow-md" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                                <h5 class="font-bold text-gray-900 dark:text-white">信驛 (5274)</h5>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">晶片管理廠商</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Midstream Companies -->
+            <div class="mb-16">
+                <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">中游供應鏈（伺服器製造與零組件）</h3>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="bg-gradient-to-br from-green-50 to-emerald-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8">
+                        <h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">伺服器代工廠</h4>
+                        <div class="space-y-6">
+                            <div class="bg-white dark:bg-gray-600 rounded-xl p-6 shadow-md" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                                <div class="flex justify-between items-start mb-4">
+                                    <h5 class="text-xl font-bold text-gray-900 dark:text-white">廣達 (2382)</h5>
+                                    <span class="text-2xl font-bold text-green-600">281元</span>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-300 mb-2">全球最大筆電代工廠之一，積極轉型AI伺服器市場</p>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">2024年營收：1.3兆新台幣</p>
+                            </div>
+                            <div class="bg-white dark:bg-gray-600 rounded-xl p-6 shadow-md" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                                <div class="flex justify-between items-start mb-4">
+                                    <h5 class="text-xl font-bold text-gray-900 dark:text-white">緯穎 (6669)</h5>
+                                    <span class="text-lg font-semibold text-blue-600">專精伺服器設計製造</span>
+                                </div>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">市值：638.4億新台幣</p>
+                            </div>
+                            <div class="bg-white dark:bg-gray-600 rounded-xl p-4" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                                <p class="text-gray-600 dark:text-gray-300">其他重要廠商：英業達(2356)、華碩(2357)、技嘉(2376)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-br from-orange-50 to-red-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8">
+                        <h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">關鍵零組件</h4>
+                        <div class="space-y-6">
+                            <div class="bg-white dark:bg-gray-600 rounded-xl p-6 shadow-md" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                                <div class="flex justify-between items-start mb-4">
+                                    <h5 class="text-xl font-bold text-gray-900 dark:text-white">台達電 (2308)</h5>
+                                    <span class="text-2xl font-bold text-green-600">888元</span>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-300 mb-2">電源管理與散熱解決方案龍頭</p>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">穩極切入AI伺服器供應鏈</p>
+                            </div>
+                            <div class="bg-white dark:bg-gray-600 rounded-xl p-6 shadow-md" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                                <div class="flex justify-between items-start mb-4">
+                                    <h5 class="text-xl font-bold text-gray-900 dark:text-white">雙鴻 (3324)</h5>
+                                    <span class="text-lg font-semibold text-green-600">245億元營收</span>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-300 mb-2">散熱解決方案領導廠商，專攻液冷技術</p>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">2024年營收年增超過30%</p>
+                            </div>
+                            <div class="bg-white dark:bg-gray-600 rounded-xl p-4" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                                <p class="text-gray-600 dark:text-gray-300">ABF載板廠商：欣興(3037)、景碩(3189)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Downstream -->
+            <div class="bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8">
+                <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">下游應用與服務</h3>
+                <div class="bg-white dark:bg-gray-600 rounded-xl p-6 shadow-md" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                    <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                        主要為軟體服務與AI應用，台灣廠商在此領域相對較少，多為美國大型雲端服務商如<strong>微軟、Google、亞馬遜</strong>等。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Performance Section -->
+    <section id="performance" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">市場行情與表現</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">AI概念股在2025年展現強勁動能，多檔個股創下歷史新高</p>
+            </div>
+
+            <!-- Index Performance -->
+            <div class="mb-16">
+                <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">TIP FactSet Taiwan AI 50指數表現</h3>
+                <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                    <div id="indexChart" class="chart-container" _echarts_instance_="ec_1759997786896" style="user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;" data-chart-option="{&quot;darkMode&quot;:true,&quot;color&quot;:[&quot;#4992ff&quot;,&quot;#7cffb2&quot;,&quot;#fddd60&quot;,&quot;#ff6e76&quot;,&quot;#58d9f9&quot;,&quot;#05c091&quot;,&quot;#ff8a45&quot;,&quot;#8d48e3&quot;,&quot;#dd79ff&quot;],&quot;backgroundColor&quot;:&quot;#100C2A&quot;,&quot;textStyle&quot;:{&quot;color&quot;:&quot;#B9B8CE&quot;,&quot;fontFamily&quot;:&quot;Microsoft YaHei&quot;,&quot;fontSize&quot;:12,&quot;fontStyle&quot;:&quot;normal&quot;,&quot;fontWeight&quot;:&quot;normal&quot;},&quot;timeAxis&quot;:{&quot;axisLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#B9B8CE&quot;}},&quot;splitLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#484753&quot;}},&quot;splitArea&quot;:{&quot;areaStyle&quot;:{&quot;color&quot;:[&quot;rgba(255,255,255,0.02)&quot;,&quot;rgba(255,255,255,0.05)&quot;]}},&quot;minorSplitLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#20203B&quot;}}},&quot;logAxis&quot;:{&quot;axisLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#B9B8CE&quot;}},&quot;splitLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#484753&quot;}},&quot;splitArea&quot;:{&quot;areaStyle&quot;:{&quot;color&quot;:[&quot;rgba(255,255,255,0.02)&quot;,&quot;rgba(255,255,255,0.05)&quot;]}},&quot;minorSplitLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#20203B&quot;}}},&quot;valueAxis&quot;:{&quot;axisLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#B9B8CE&quot;}},&quot;splitLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#484753&quot;}},&quot;splitArea&quot;:{&quot;areaStyle&quot;:{&quot;color&quot;:[&quot;rgba(255,255,255,0.02)&quot;,&quot;rgba(255,255,255,0.05)&quot;]}},&quot;minorSplitLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#20203B&quot;}}},&quot;categoryAxis&quot;:{&quot;axisLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#B9B8CE&quot;}},&quot;splitLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#484753&quot;},&quot;show&quot;:false},&quot;splitArea&quot;:{&quot;areaStyle&quot;:{&quot;color&quot;:[&quot;rgba(255,255,255,0.02)&quot;,&quot;rgba(255,255,255,0.05)&quot;]}},&quot;minorSplitLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#20203B&quot;}}},&quot;line&quot;:{&quot;symbol&quot;:&quot;circle&quot;},&quot;graph&quot;:{&quot;color&quot;:[&quot;#4992ff&quot;,&quot;#7cffb2&quot;,&quot;#fddd60&quot;,&quot;#ff6e76&quot;,&quot;#58d9f9&quot;,&quot;#05c091&quot;,&quot;#ff8a45&quot;,&quot;#8d48e3&quot;,&quot;#dd79ff&quot;]},&quot;gauge&quot;:{&quot;title&quot;:{&quot;color&quot;:&quot;#B9B8CE&quot;},&quot;axisLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:[[1,&quot;rgba(207,212,219,0.2)&quot;]]}},&quot;axisLabel&quot;:{&quot;color&quot;:&quot;#B9B8CE&quot;},&quot;detail&quot;:{&quot;color&quot;:&quot;#EEF1FA&quot;}},&quot;candlestick&quot;:{&quot;itemStyle&quot;:{&quot;color&quot;:&quot;#f64e56&quot;,&quot;color0&quot;:&quot;#54ea92&quot;,&quot;borderColor&quot;:&quot;#f64e56&quot;,&quot;borderColor0&quot;:&quot;#54ea92&quot;}},&quot;colorBy&quot;:&quot;series&quot;,&quot;gradientColor&quot;:[&quot;#f6efa6&quot;,&quot;#d88273&quot;,&quot;#bf444c&quot;],&quot;aria&quot;:{&quot;decal&quot;:{&quot;decals&quot;:[{&quot;color&quot;:&quot;rgba(0, 0, 0, 0.2)&quot;,&quot;dashArrayX&quot;:[1,0],&quot;dashArrayY&quot;:[2,5],&quot;symbolSize&quot;:1,&quot;rotation&quot;:0.5235987755982988},{&quot;color&quot;:&quot;rgba(0, 0, 0, 0.2)&quot;,&quot;symbol&quot;:&quot;circle&quot;,&quot;dashArrayX&quot;:[[8,8],[0,8,8,0]],&quot;dashArrayY&quot;:[6,0],&quot;symbolSize&quot;:0.8},{&quot;color&quot;:&quot;rgba(0, 0, 0, 0.2)&quot;,&quot;dashArrayX&quot;:[1,0],&quot;dashArrayY&quot;:[4,3],&quot;rotation&quot;:-0.7853981633974483},{&quot;color&quot;:&quot;rgba(0, 0, 0, 0.2)&quot;,&quot;dashArrayX&quot;:[[6,6],[0,6,6,0]],&quot;dashArrayY&quot;:[6,0]},{&quot;color&quot;:&quot;rgba(0, 0, 0, 0.2)&quot;,&quot;dashArrayX&quot;:[[1,0],[1,6]],&quot;dashArrayY&quot;:[1,0,6,0],&quot;rotation&quot;:0.7853981633974483},{&quot;color&quot;:&quot;rgba(0, 0, 0, 0.2)&quot;,&quot;symbol&quot;:&quot;triangle&quot;,&quot;dashArrayX&quot;:[[9,9],[0,9,9,0]],&quot;dashArrayY&quot;:[7,2],&quot;symbolSize&quot;:0.75}]}},&quot;stateAnimation&quot;:{&quot;duration&quot;:300,&quot;easing&quot;:&quot;cubicOut&quot;},&quot;animation&quot;:&quot;auto&quot;,&quot;animationDuration&quot;:1000,&quot;animationDurationUpdate&quot;:500,&quot;animationEasing&quot;:&quot;cubicInOut&quot;,&quot;animationEasingUpdate&quot;:&quot;cubicInOut&quot;,&quot;animationThreshold&quot;:2000,&quot;progressiveThreshold&quot;:3000,&quot;progressive&quot;:400,&quot;hoverLayerThreshold&quot;:3000,&quot;useUTC&quot;:false,&quot;axisPointer&quot;:[{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#817f91&quot;,&quot;width&quot;:1,&quot;type&quot;:&quot;dashed&quot;},&quot;crossStyle&quot;:{&quot;color&quot;:&quot;#817f91&quot;},&quot;label&quot;:{&quot;color&quot;:&quot;#fff&quot;,&quot;show&quot;:true,&quot;formatter&quot;:null,&quot;precision&quot;:&quot;auto&quot;,&quot;margin&quot;:3,&quot;padding&quot;:[5,7,5,7],&quot;backgroundColor&quot;:&quot;auto&quot;,&quot;borderColor&quot;:null,&quot;borderWidth&quot;:0,&quot;borderRadius&quot;:3},&quot;show&quot;:&quot;auto&quot;,&quot;z&quot;:50,&quot;type&quot;:&quot;line&quot;,&quot;snap&quot;:false,&quot;triggerTooltip&quot;:true,&quot;triggerEmphasis&quot;:true,&quot;value&quot;:null,&quot;status&quot;:null,&quot;link&quot;:[],&quot;animation&quot;:null,&quot;animationDurationUpdate&quot;:200,&quot;shadowStyle&quot;:{&quot;color&quot;:&quot;rgba(210,219,238,0.2)&quot;},&quot;handle&quot;:{&quot;show&quot;:false,&quot;icon&quot;:&quot;M10.7,11.9v-1.3H9.3v1.3c-4.9,0.3-8.8,4.4-8.8,9.4c0,5,3.9,9.1,8.8,9.4h1.3c4.9-0.3,8.8-4.4,8.8-9.4C19.5,16.3,15.6,12.2,10.7,11.9z M13.3,24.4H6.7v-1.2h6.6z M13.3,22H6.7v-1.2h6.6z M13.3,19.6H6.7v-1.2h6.6z&quot;,&quot;size&quot;:45,&quot;margin&quot;:50,&quot;color&quot;:&quot;#333&quot;,&quot;shadowBlur&quot;:3,&quot;shadowColor&quot;:&quot;#aaa&quot;,&quot;shadowOffsetX&quot;:0,&quot;shadowOffsetY&quot;:2,&quot;throttle&quot;:40}}],&quot;tooltip&quot;:[{&quot;trigger&quot;:&quot;axis&quot;,&quot;backgroundColor&quot;:&quot;#374151&quot;,&quot;borderColor&quot;:&quot;#6b7280&quot;,&quot;textStyle&quot;:{&quot;color&quot;:&quot;#ffffff&quot;,&quot;fontSize&quot;:14},&quot;z&quot;:60,&quot;show&quot;:true,&quot;showContent&quot;:true,&quot;triggerOn&quot;:&quot;mousemove|click&quot;,&quot;alwaysShowContent&quot;:false,&quot;displayMode&quot;:&quot;single&quot;,&quot;renderMode&quot;:&quot;auto&quot;,&quot;confine&quot;:null,&quot;showDelay&quot;:0,&quot;hideDelay&quot;:100,&quot;transitionDuration&quot;:0.4,&quot;enterable&quot;:false,&quot;shadowBlur&quot;:10,&quot;shadowColor&quot;:&quot;rgba(0, 0, 0, .2)&quot;,&quot;shadowOffsetX&quot;:1,&quot;shadowOffsetY&quot;:2,&quot;borderRadius&quot;:4,&quot;borderWidth&quot;:1,&quot;padding&quot;:null,&quot;extraCssText&quot;:&quot;&quot;,&quot;axisPointer&quot;:{&quot;type&quot;:&quot;line&quot;,&quot;axis&quot;:&quot;auto&quot;,&quot;animation&quot;:&quot;auto&quot;,&quot;animationDurationUpdate&quot;:200,&quot;animationEasingUpdate&quot;:&quot;exponentialOut&quot;,&quot;crossStyle&quot;:{&quot;color&quot;:&quot;#999&quot;,&quot;width&quot;:1,&quot;type&quot;:&quot;dashed&quot;,&quot;textStyle&quot;:{}}}}],&quot;yAxis&quot;:[{&quot;type&quot;:&quot;value&quot;,&quot;axisLabel&quot;:{&quot;formatter&quot;:&quot;{value}%&quot;,&quot;color&quot;:&quot;#9ca3af&quot;,&quot;show&quot;:true,&quot;inside&quot;:false,&quot;rotate&quot;:0,&quot;showMinLabel&quot;:null,&quot;showMaxLabel&quot;:null,&quot;margin&quot;:8,&quot;fontSize&quot;:12},&quot;axisLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#6b7280&quot;,&quot;width&quot;:1,&quot;type&quot;:&quot;solid&quot;},&quot;show&quot;:&quot;auto&quot;,&quot;onZero&quot;:true,&quot;onZeroAxisIndex&quot;:null,&quot;symbol&quot;:[&quot;none&quot;,&quot;none&quot;],&quot;symbolSize&quot;:[10,15]},&quot;splitLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#374151&quot;,&quot;width&quot;:1,&quot;type&quot;:&quot;solid&quot;},&quot;show&quot;:true},&quot;splitArea&quot;:{&quot;areaStyle&quot;:{&quot;color&quot;:[&quot;rgba(255,255,255,0.02)&quot;,&quot;rgba(255,255,255,0.05)&quot;]},&quot;show&quot;:false},&quot;minorSplitLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#20203B&quot;,&quot;width&quot;:1},&quot;show&quot;:false},&quot;boundaryGap&quot;:[0,0],&quot;axisTick&quot;:{&quot;show&quot;:&quot;auto&quot;,&quot;inside&quot;:false,&quot;length&quot;:5,&quot;lineStyle&quot;:{&quot;width&quot;:1}},&quot;splitNumber&quot;:5,&quot;minorTick&quot;:{&quot;show&quot;:false,&quot;splitNumber&quot;:5,&quot;length&quot;:3,&quot;lineStyle&quot;:{}},&quot;show&quot;:true,&quot;z&quot;:0,&quot;inverse&quot;:false,&quot;name&quot;:&quot;&quot;,&quot;nameLocation&quot;:&quot;end&quot;,&quot;nameRotate&quot;:null,&quot;nameTruncate&quot;:{&quot;maxWidth&quot;:null,&quot;ellipsis&quot;:&quot;...&quot;,&quot;placeholder&quot;:&quot;.&quot;},&quot;nameTextStyle&quot;:{},&quot;nameGap&quot;:15,&quot;silent&quot;:false,&quot;triggerEvent&quot;:false,&quot;tooltip&quot;:{&quot;show&quot;:false},&quot;axisPointer&quot;:{},&quot;offset&quot;:0}],&quot;xAxis&quot;:[{&quot;type&quot;:&quot;category&quot;,&quot;data&quot;:[&quot;1個月&quot;,&quot;3個月&quot;,&quot;6個月&quot;,&quot;1年&quot;],&quot;axisLabel&quot;:{&quot;color&quot;:&quot;#9ca3af&quot;,&quot;interval&quot;:&quot;auto&quot;,&quot;show&quot;:true,&quot;inside&quot;:false,&quot;rotate&quot;:0,&quot;showMinLabel&quot;:null,&quot;showMaxLabel&quot;:null,&quot;margin&quot;:8,&quot;fontSize&quot;:12},&quot;axisLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#6b7280&quot;,&quot;width&quot;:1,&quot;type&quot;:&quot;solid&quot;},&quot;show&quot;:true,&quot;onZero&quot;:true,&quot;onZeroAxisIndex&quot;:null,&quot;symbol&quot;:[&quot;none&quot;,&quot;none&quot;],&quot;symbolSize&quot;:[10,15]},&quot;splitLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#484753&quot;,&quot;width&quot;:1,&quot;type&quot;:&quot;solid&quot;},&quot;show&quot;:false},&quot;splitArea&quot;:{&quot;areaStyle&quot;:{&quot;color&quot;:[&quot;rgba(255,255,255,0.02)&quot;,&quot;rgba(255,255,255,0.05)&quot;]},&quot;show&quot;:false},&quot;minorSplitLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#20203B&quot;}},&quot;boundaryGap&quot;:true,&quot;deduplication&quot;:null,&quot;axisTick&quot;:{&quot;alignWithLabel&quot;:false,&quot;interval&quot;:&quot;auto&quot;,&quot;show&quot;:true,&quot;inside&quot;:false,&quot;length&quot;:5,&quot;lineStyle&quot;:{&quot;width&quot;:1}},&quot;show&quot;:true,&quot;z&quot;:0,&quot;inverse&quot;:false,&quot;name&quot;:&quot;&quot;,&quot;nameLocation&quot;:&quot;end&quot;,&quot;nameRotate&quot;:null,&quot;nameTruncate&quot;:{&quot;maxWidth&quot;:null,&quot;ellipsis&quot;:&quot;...&quot;,&quot;placeholder&quot;:&quot;.&quot;},&quot;nameTextStyle&quot;:{},&quot;nameGap&quot;:15,&quot;silent&quot;:false,&quot;triggerEvent&quot;:false,&quot;tooltip&quot;:{&quot;show&quot;:false},&quot;axisPointer&quot;:{&quot;status&quot;:&quot;hide&quot;,&quot;value&quot;:3},&quot;offset&quot;:0}],&quot;grid&quot;:[{&quot;left&quot;:&quot;3%&quot;,&quot;right&quot;:&quot;4%&quot;,&quot;bottom&quot;:&quot;3%&quot;,&quot;containLabel&quot;:true,&quot;show&quot;:false,&quot;z&quot;:0,&quot;top&quot;:60,&quot;backgroundColor&quot;:&quot;rgba(0,0,0,0)&quot;,&quot;borderWidth&quot;:1,&quot;borderColor&quot;:&quot;#ccc&quot;}],&quot;series&quot;:[{&quot;name&quot;:&quot;累積報酬率&quot;,&quot;type&quot;:&quot;bar&quot;,&quot;data&quot;:[7.21,21.96,70.49,21.24],&quot;itemStyle&quot;:{&quot;color&quot;:{&quot;colorStops&quot;:[{&quot;offset&quot;:0,&quot;color&quot;:&quot;#667eea&quot;},{&quot;offset&quot;:1,&quot;color&quot;:&quot;#764ba2&quot;}],&quot;x&quot;:0,&quot;y&quot;:0,&quot;x2&quot;:0,&quot;y2&quot;:1,&quot;type&quot;:&quot;linear&quot;,&quot;global&quot;:false}},&quot;label&quot;:{&quot;show&quot;:true,&quot;position&quot;:&quot;top&quot;,&quot;formatter&quot;:&quot;{c}%&quot;,&quot;color&quot;:&quot;#ffffff&quot;},&quot;z&quot;:2,&quot;coordinateSystem&quot;:&quot;cartesian2d&quot;,&quot;legendHoverLink&quot;:true,&quot;barMinHeight&quot;:0,&quot;barMinAngle&quot;:0,&quot;large&quot;:false,&quot;largeThreshold&quot;:400,&quot;progressive&quot;:3000,&quot;progressiveChunkMode&quot;:&quot;mod&quot;,&quot;clip&quot;:true,&quot;roundCap&quot;:false,&quot;showBackground&quot;:false,&quot;backgroundStyle&quot;:{&quot;color&quot;:&quot;rgba(180, 180, 180, 0.2)&quot;,&quot;borderColor&quot;:null,&quot;borderWidth&quot;:0,&quot;borderType&quot;:&quot;solid&quot;,&quot;borderRadius&quot;:0,&quot;shadowBlur&quot;:0,&quot;shadowColor&quot;:null,&quot;shadowOffsetX&quot;:0,&quot;shadowOffsetY&quot;:0,&quot;opacity&quot;:1},&quot;select&quot;:{&quot;itemStyle&quot;:{&quot;borderColor&quot;:&quot;#212121&quot;}},&quot;realtimeSort&quot;:false,&quot;emphasis&quot;:{&quot;label&quot;:{&quot;show&quot;:true}}}],&quot;visualMap&quot;:[],&quot;legend&quot;:[{&quot;data&quot;:[&quot;累積報酬率&quot;],&quot;textStyle&quot;:{&quot;color&quot;:&quot;#ffffff&quot;},&quot;z&quot;:4,&quot;show&quot;:true,&quot;orient&quot;:&quot;horizontal&quot;,&quot;left&quot;:&quot;center&quot;,&quot;top&quot;:0,&quot;align&quot;:&quot;auto&quot;,&quot;backgroundColor&quot;:&quot;rgba(0,0,0,0)&quot;,&quot;borderColor&quot;:&quot;#ccc&quot;,&quot;borderRadius&quot;:0,&quot;borderWidth&quot;:0,&quot;padding&quot;:5,&quot;itemGap&quot;:10,&quot;itemWidth&quot;:25,&quot;itemHeight&quot;:14,&quot;symbolRotate&quot;:&quot;inherit&quot;,&quot;symbolKeepAspect&quot;:true,&quot;inactiveColor&quot;:&quot;#ccc&quot;,&quot;inactiveBorderColor&quot;:&quot;#ccc&quot;,&quot;inactiveBorderWidth&quot;:&quot;auto&quot;,&quot;itemStyle&quot;:{&quot;color&quot;:&quot;inherit&quot;,&quot;opacity&quot;:&quot;inherit&quot;,&quot;borderColor&quot;:&quot;inherit&quot;,&quot;borderWidth&quot;:&quot;auto&quot;,&quot;borderCap&quot;:&quot;inherit&quot;,&quot;borderJoin&quot;:&quot;inherit&quot;,&quot;borderDashOffset&quot;:&quot;inherit&quot;,&quot;borderMiterLimit&quot;:&quot;inherit&quot;},&quot;lineStyle&quot;:{&quot;width&quot;:&quot;auto&quot;,&quot;color&quot;:&quot;inherit&quot;,&quot;inactiveColor&quot;:&quot;#ccc&quot;,&quot;inactiveWidth&quot;:2,&quot;opacity&quot;:&quot;inherit&quot;,&quot;type&quot;:&quot;inherit&quot;,&quot;cap&quot;:&quot;inherit&quot;,&quot;join&quot;:&quot;inherit&quot;,&quot;dashOffset&quot;:&quot;inherit&quot;,&quot;miterLimit&quot;:&quot;inherit&quot;},&quot;selectedMode&quot;:true,&quot;selector&quot;:false,&quot;selectorLabel&quot;:{&quot;show&quot;:true,&quot;borderRadius&quot;:10,&quot;padding&quot;:[3,5,3,5],&quot;fontSize&quot;:12,&quot;fontFamily&quot;:&quot;sans-serif&quot;,&quot;color&quot;:&quot;#666&quot;,&quot;borderWidth&quot;:1,&quot;borderColor&quot;:&quot;#666&quot;},&quot;emphasis&quot;:{&quot;selectorLabel&quot;:{&quot;show&quot;:true,&quot;color&quot;:&quot;#eee&quot;,&quot;backgroundColor&quot;:&quot;#666&quot;}},&quot;selectorPosition&quot;:&quot;auto&quot;,&quot;selectorItemGap&quot;:7,&quot;selectorButtonGap&quot;:10,&quot;tooltip&quot;:{&quot;show&quot;:false},&quot;selected&quot;:{}}],&quot;markArea&quot;:[],&quot;markLine&quot;:[],&quot;markPoint&quot;:[],&quot;brush&quot;:[],&quot;dataZoom&quot;:[]}"><div style="position: relative; width: 1152px; height: 400px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="1152" height="400" style="position: absolute; left: 0px; top: 0px; width: 1152px; height: 400px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class=""></div></div>
+                </div>
+            </div>
+
+            <!-- Key Stocks Performance -->
+            <div class="mb-16">
+                <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">重點個股近期表現</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg text-center" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                        <div class="text-3xl font-bold text-green-600 mb-2">1,440元</div>
+                        <div class="text-lg font-semibold text-gray-900 dark:text-white mb-1">台積電</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">市值37.34兆元</div>
+                        <div class="text-xs text-green-600 mt-2">創歷史新高</div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg text-center" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                        <div class="text-3xl font-bold text-blue-600 mb-2">1,440元</div>
+                        <div class="text-lg font-semibold text-gray-900 dark:text-white mb-1">聯發科</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">市值2.31兆元</div>
+                        <div class="text-xs text-blue-600 mt-2">積極布局AI</div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg text-center" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                        <div class="text-3xl font-bold text-purple-600 mb-2">281元</div>
+                        <div class="text-lg font-semibold text-gray-900 dark:text-white mb-1">廣達</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">營收1.3兆元</div>
+                        <div class="text-xs text-purple-600 mt-2">AI伺服器轉型</div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg text-center" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                        <div class="text-3xl font-bold text-orange-600 mb-2">888元</div>
+                        <div class="text-lg font-semibold text-gray-900 dark:text-white mb-1">台達電</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">朝千元挑戰</div>
+                        <div class="text-xs text-orange-600 mt-2">散熱解決方案</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Market Growth Chart -->
+            <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">AI市場成長預測</h3>
+                <div id="growthChart" class="chart-container" _echarts_instance_="ec_1759997786897" style="user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;" data-chart-option="{&quot;darkMode&quot;:true,&quot;color&quot;:[&quot;#4992ff&quot;,&quot;#7cffb2&quot;,&quot;#fddd60&quot;,&quot;#ff6e76&quot;,&quot;#58d9f9&quot;,&quot;#05c091&quot;,&quot;#ff8a45&quot;,&quot;#8d48e3&quot;,&quot;#dd79ff&quot;],&quot;backgroundColor&quot;:&quot;#100C2A&quot;,&quot;textStyle&quot;:{&quot;color&quot;:&quot;#B9B8CE&quot;,&quot;fontFamily&quot;:&quot;Microsoft YaHei&quot;,&quot;fontSize&quot;:12,&quot;fontStyle&quot;:&quot;normal&quot;,&quot;fontWeight&quot;:&quot;normal&quot;},&quot;timeAxis&quot;:{&quot;axisLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#B9B8CE&quot;}},&quot;splitLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#484753&quot;}},&quot;splitArea&quot;:{&quot;areaStyle&quot;:{&quot;color&quot;:[&quot;rgba(255,255,255,0.02)&quot;,&quot;rgba(255,255,255,0.05)&quot;]}},&quot;minorSplitLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#20203B&quot;}}},&quot;logAxis&quot;:{&quot;axisLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#B9B8CE&quot;}},&quot;splitLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#484753&quot;}},&quot;splitArea&quot;:{&quot;areaStyle&quot;:{&quot;color&quot;:[&quot;rgba(255,255,255,0.02)&quot;,&quot;rgba(255,255,255,0.05)&quot;]}},&quot;minorSplitLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#20203B&quot;}}},&quot;valueAxis&quot;:{&quot;axisLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#B9B8CE&quot;}},&quot;splitLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#484753&quot;}},&quot;splitArea&quot;:{&quot;areaStyle&quot;:{&quot;color&quot;:[&quot;rgba(255,255,255,0.02)&quot;,&quot;rgba(255,255,255,0.05)&quot;]}},&quot;minorSplitLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#20203B&quot;}}},&quot;categoryAxis&quot;:{&quot;axisLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#B9B8CE&quot;}},&quot;splitLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#484753&quot;},&quot;show&quot;:false},&quot;splitArea&quot;:{&quot;areaStyle&quot;:{&quot;color&quot;:[&quot;rgba(255,255,255,0.02)&quot;,&quot;rgba(255,255,255,0.05)&quot;]}},&quot;minorSplitLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#20203B&quot;}}},&quot;line&quot;:{&quot;symbol&quot;:&quot;circle&quot;},&quot;graph&quot;:{&quot;color&quot;:[&quot;#4992ff&quot;,&quot;#7cffb2&quot;,&quot;#fddd60&quot;,&quot;#ff6e76&quot;,&quot;#58d9f9&quot;,&quot;#05c091&quot;,&quot;#ff8a45&quot;,&quot;#8d48e3&quot;,&quot;#dd79ff&quot;]},&quot;gauge&quot;:{&quot;title&quot;:{&quot;color&quot;:&quot;#B9B8CE&quot;},&quot;axisLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:[[1,&quot;rgba(207,212,219,0.2)&quot;]]}},&quot;axisLabel&quot;:{&quot;color&quot;:&quot;#B9B8CE&quot;},&quot;detail&quot;:{&quot;color&quot;:&quot;#EEF1FA&quot;}},&quot;candlestick&quot;:{&quot;itemStyle&quot;:{&quot;color&quot;:&quot;#f64e56&quot;,&quot;color0&quot;:&quot;#54ea92&quot;,&quot;borderColor&quot;:&quot;#f64e56&quot;,&quot;borderColor0&quot;:&quot;#54ea92&quot;}},&quot;colorBy&quot;:&quot;series&quot;,&quot;gradientColor&quot;:[&quot;#f6efa6&quot;,&quot;#d88273&quot;,&quot;#bf444c&quot;],&quot;aria&quot;:{&quot;decal&quot;:{&quot;decals&quot;:[{&quot;color&quot;:&quot;rgba(0, 0, 0, 0.2)&quot;,&quot;dashArrayX&quot;:[1,0],&quot;dashArrayY&quot;:[2,5],&quot;symbolSize&quot;:1,&quot;rotation&quot;:0.5235987755982988},{&quot;color&quot;:&quot;rgba(0, 0, 0, 0.2)&quot;,&quot;symbol&quot;:&quot;circle&quot;,&quot;dashArrayX&quot;:[[8,8],[0,8,8,0]],&quot;dashArrayY&quot;:[6,0],&quot;symbolSize&quot;:0.8},{&quot;color&quot;:&quot;rgba(0, 0, 0, 0.2)&quot;,&quot;dashArrayX&quot;:[1,0],&quot;dashArrayY&quot;:[4,3],&quot;rotation&quot;:-0.7853981633974483},{&quot;color&quot;:&quot;rgba(0, 0, 0, 0.2)&quot;,&quot;dashArrayX&quot;:[[6,6],[0,6,6,0]],&quot;dashArrayY&quot;:[6,0]},{&quot;color&quot;:&quot;rgba(0, 0, 0, 0.2)&quot;,&quot;dashArrayX&quot;:[[1,0],[1,6]],&quot;dashArrayY&quot;:[1,0,6,0],&quot;rotation&quot;:0.7853981633974483},{&quot;color&quot;:&quot;rgba(0, 0, 0, 0.2)&quot;,&quot;symbol&quot;:&quot;triangle&quot;,&quot;dashArrayX&quot;:[[9,9],[0,9,9,0]],&quot;dashArrayY&quot;:[7,2],&quot;symbolSize&quot;:0.75}]}},&quot;stateAnimation&quot;:{&quot;duration&quot;:300,&quot;easing&quot;:&quot;cubicOut&quot;},&quot;animation&quot;:&quot;auto&quot;,&quot;animationDuration&quot;:1000,&quot;animationDurationUpdate&quot;:500,&quot;animationEasing&quot;:&quot;cubicInOut&quot;,&quot;animationEasingUpdate&quot;:&quot;cubicInOut&quot;,&quot;animationThreshold&quot;:2000,&quot;progressiveThreshold&quot;:3000,&quot;progressive&quot;:400,&quot;hoverLayerThreshold&quot;:3000,&quot;useUTC&quot;:false,&quot;axisPointer&quot;:[{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#817f91&quot;,&quot;width&quot;:1,&quot;type&quot;:&quot;dashed&quot;},&quot;crossStyle&quot;:{&quot;color&quot;:&quot;#817f91&quot;},&quot;label&quot;:{&quot;color&quot;:&quot;#fff&quot;,&quot;show&quot;:true,&quot;formatter&quot;:null,&quot;precision&quot;:&quot;auto&quot;,&quot;margin&quot;:3,&quot;padding&quot;:[5,7,5,7],&quot;backgroundColor&quot;:&quot;auto&quot;,&quot;borderColor&quot;:null,&quot;borderWidth&quot;:0,&quot;borderRadius&quot;:3},&quot;show&quot;:&quot;auto&quot;,&quot;z&quot;:50,&quot;type&quot;:&quot;line&quot;,&quot;snap&quot;:false,&quot;triggerTooltip&quot;:true,&quot;triggerEmphasis&quot;:true,&quot;value&quot;:null,&quot;status&quot;:null,&quot;link&quot;:[],&quot;animation&quot;:null,&quot;animationDurationUpdate&quot;:200,&quot;shadowStyle&quot;:{&quot;color&quot;:&quot;rgba(210,219,238,0.2)&quot;},&quot;handle&quot;:{&quot;show&quot;:false,&quot;icon&quot;:&quot;M10.7,11.9v-1.3H9.3v1.3c-4.9,0.3-8.8,4.4-8.8,9.4c0,5,3.9,9.1,8.8,9.4h1.3c4.9-0.3,8.8-4.4,8.8-9.4C19.5,16.3,15.6,12.2,10.7,11.9z M13.3,24.4H6.7v-1.2h6.6z M13.3,22H6.7v-1.2h6.6z M13.3,19.6H6.7v-1.2h6.6z&quot;,&quot;size&quot;:45,&quot;margin&quot;:50,&quot;color&quot;:&quot;#333&quot;,&quot;shadowBlur&quot;:3,&quot;shadowColor&quot;:&quot;#aaa&quot;,&quot;shadowOffsetX&quot;:0,&quot;shadowOffsetY&quot;:2,&quot;throttle&quot;:40}}],&quot;tooltip&quot;:[{&quot;trigger&quot;:&quot;axis&quot;,&quot;backgroundColor&quot;:&quot;#374151&quot;,&quot;borderColor&quot;:&quot;#6b7280&quot;,&quot;textStyle&quot;:{&quot;color&quot;:&quot;#ffffff&quot;,&quot;fontSize&quot;:14},&quot;z&quot;:60,&quot;show&quot;:true,&quot;showContent&quot;:true,&quot;triggerOn&quot;:&quot;mousemove|click&quot;,&quot;alwaysShowContent&quot;:false,&quot;displayMode&quot;:&quot;single&quot;,&quot;renderMode&quot;:&quot;auto&quot;,&quot;confine&quot;:null,&quot;showDelay&quot;:0,&quot;hideDelay&quot;:100,&quot;transitionDuration&quot;:0.4,&quot;enterable&quot;:false,&quot;shadowBlur&quot;:10,&quot;shadowColor&quot;:&quot;rgba(0, 0, 0, .2)&quot;,&quot;shadowOffsetX&quot;:1,&quot;shadowOffsetY&quot;:2,&quot;borderRadius&quot;:4,&quot;borderWidth&quot;:1,&quot;padding&quot;:null,&quot;extraCssText&quot;:&quot;&quot;,&quot;axisPointer&quot;:{&quot;type&quot;:&quot;line&quot;,&quot;axis&quot;:&quot;auto&quot;,&quot;animation&quot;:&quot;auto&quot;,&quot;animationDurationUpdate&quot;:200,&quot;animationEasingUpdate&quot;:&quot;exponentialOut&quot;,&quot;crossStyle&quot;:{&quot;color&quot;:&quot;#999&quot;,&quot;width&quot;:1,&quot;type&quot;:&quot;dashed&quot;,&quot;textStyle&quot;:{}}}}],&quot;yAxis&quot;:[{&quot;type&quot;:&quot;value&quot;,&quot;axisLabel&quot;:{&quot;formatter&quot;:&quot;{value}兆美元&quot;,&quot;color&quot;:&quot;#9ca3af&quot;,&quot;show&quot;:true,&quot;inside&quot;:false,&quot;rotate&quot;:0,&quot;showMinLabel&quot;:null,&quot;showMaxLabel&quot;:null,&quot;margin&quot;:8,&quot;fontSize&quot;:12},&quot;axisLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#6b7280&quot;,&quot;width&quot;:1,&quot;type&quot;:&quot;solid&quot;},&quot;show&quot;:&quot;auto&quot;,&quot;onZero&quot;:true,&quot;onZeroAxisIndex&quot;:null,&quot;symbol&quot;:[&quot;none&quot;,&quot;none&quot;],&quot;symbolSize&quot;:[10,15]},&quot;splitLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#374151&quot;,&quot;width&quot;:1,&quot;type&quot;:&quot;solid&quot;},&quot;show&quot;:true},&quot;splitArea&quot;:{&quot;areaStyle&quot;:{&quot;color&quot;:[&quot;rgba(255,255,255,0.02)&quot;,&quot;rgba(255,255,255,0.05)&quot;]},&quot;show&quot;:false},&quot;minorSplitLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#20203B&quot;,&quot;width&quot;:1},&quot;show&quot;:false},&quot;boundaryGap&quot;:[0,0],&quot;axisTick&quot;:{&quot;show&quot;:&quot;auto&quot;,&quot;inside&quot;:false,&quot;length&quot;:5,&quot;lineStyle&quot;:{&quot;width&quot;:1}},&quot;splitNumber&quot;:5,&quot;minorTick&quot;:{&quot;show&quot;:false,&quot;splitNumber&quot;:5,&quot;length&quot;:3,&quot;lineStyle&quot;:{}},&quot;show&quot;:true,&quot;z&quot;:0,&quot;inverse&quot;:false,&quot;name&quot;:&quot;&quot;,&quot;nameLocation&quot;:&quot;end&quot;,&quot;nameRotate&quot;:null,&quot;nameTruncate&quot;:{&quot;maxWidth&quot;:null,&quot;ellipsis&quot;:&quot;...&quot;,&quot;placeholder&quot;:&quot;.&quot;},&quot;nameTextStyle&quot;:{},&quot;nameGap&quot;:15,&quot;silent&quot;:false,&quot;triggerEvent&quot;:false,&quot;tooltip&quot;:{&quot;show&quot;:false},&quot;axisPointer&quot;:{},&quot;offset&quot;:0}],&quot;xAxis&quot;:[{&quot;type&quot;:&quot;category&quot;,&quot;data&quot;:[&quot;2022&quot;,&quot;2023&quot;,&quot;2024&quot;,&quot;2025&quot;,&quot;2026&quot;,&quot;2027&quot;,&quot;2032&quot;],&quot;axisLabel&quot;:{&quot;color&quot;:&quot;#9ca3af&quot;,&quot;interval&quot;:&quot;auto&quot;,&quot;show&quot;:true,&quot;inside&quot;:false,&quot;rotate&quot;:0,&quot;showMinLabel&quot;:null,&quot;showMaxLabel&quot;:null,&quot;margin&quot;:8,&quot;fontSize&quot;:12},&quot;axisLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#6b7280&quot;,&quot;width&quot;:1,&quot;type&quot;:&quot;solid&quot;},&quot;show&quot;:true,&quot;onZero&quot;:true,&quot;onZeroAxisIndex&quot;:null,&quot;symbol&quot;:[&quot;none&quot;,&quot;none&quot;],&quot;symbolSize&quot;:[10,15]},&quot;splitLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#484753&quot;,&quot;width&quot;:1,&quot;type&quot;:&quot;solid&quot;},&quot;show&quot;:false},&quot;splitArea&quot;:{&quot;areaStyle&quot;:{&quot;color&quot;:[&quot;rgba(255,255,255,0.02)&quot;,&quot;rgba(255,255,255,0.05)&quot;]},&quot;show&quot;:false},&quot;minorSplitLine&quot;:{&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#20203B&quot;}},&quot;boundaryGap&quot;:true,&quot;deduplication&quot;:null,&quot;axisTick&quot;:{&quot;alignWithLabel&quot;:false,&quot;interval&quot;:&quot;auto&quot;,&quot;show&quot;:true,&quot;inside&quot;:false,&quot;length&quot;:5,&quot;lineStyle&quot;:{&quot;width&quot;:1}},&quot;show&quot;:true,&quot;z&quot;:0,&quot;inverse&quot;:false,&quot;name&quot;:&quot;&quot;,&quot;nameLocation&quot;:&quot;end&quot;,&quot;nameRotate&quot;:null,&quot;nameTruncate&quot;:{&quot;maxWidth&quot;:null,&quot;ellipsis&quot;:&quot;...&quot;,&quot;placeholder&quot;:&quot;.&quot;},&quot;nameTextStyle&quot;:{},&quot;nameGap&quot;:15,&quot;silent&quot;:false,&quot;triggerEvent&quot;:false,&quot;tooltip&quot;:{&quot;show&quot;:false},&quot;axisPointer&quot;:{&quot;status&quot;:&quot;hide&quot;,&quot;value&quot;:6},&quot;offset&quot;:0}],&quot;grid&quot;:[{&quot;left&quot;:&quot;3%&quot;,&quot;right&quot;:&quot;4%&quot;,&quot;bottom&quot;:&quot;3%&quot;,&quot;containLabel&quot;:true,&quot;show&quot;:false,&quot;z&quot;:0,&quot;top&quot;:60,&quot;backgroundColor&quot;:&quot;rgba(0,0,0,0)&quot;,&quot;borderWidth&quot;:1,&quot;borderColor&quot;:&quot;#ccc&quot;}],&quot;series&quot;:[{&quot;name&quot;:&quot;生成式AI支出&quot;,&quot;type&quot;:&quot;line&quot;,&quot;data&quot;:[0.1,0.2,0.4,0.8,1.5,2.8,null],&quot;smooth&quot;:true,&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#10b981&quot;,&quot;width&quot;:3,&quot;type&quot;:&quot;solid&quot;},&quot;itemStyle&quot;:{&quot;color&quot;:&quot;#10b981&quot;},&quot;areaStyle&quot;:{&quot;color&quot;:{&quot;colorStops&quot;:[{&quot;offset&quot;:0,&quot;color&quot;:&quot;rgba(16, 185, 129, 0.3)&quot;},{&quot;offset&quot;:1,&quot;color&quot;:&quot;rgba(16, 185, 129, 0.1)&quot;}],&quot;x&quot;:0,&quot;y&quot;:0,&quot;x2&quot;:0,&quot;y2&quot;:1,&quot;type&quot;:&quot;linear&quot;,&quot;global&quot;:false}},&quot;symbol&quot;:&quot;circle&quot;,&quot;z&quot;:3,&quot;coordinateSystem&quot;:&quot;cartesian2d&quot;,&quot;legendHoverLink&quot;:true,&quot;clip&quot;:true,&quot;label&quot;:{&quot;position&quot;:&quot;top&quot;},&quot;endLabel&quot;:{&quot;show&quot;:false,&quot;valueAnimation&quot;:true,&quot;distance&quot;:8},&quot;emphasis&quot;:{&quot;scale&quot;:true,&quot;label&quot;:{}},&quot;step&quot;:false,&quot;smoothMonotone&quot;:null,&quot;symbolSize&quot;:4,&quot;symbolRotate&quot;:null,&quot;showSymbol&quot;:true,&quot;showAllSymbol&quot;:&quot;auto&quot;,&quot;connectNulls&quot;:false,&quot;sampling&quot;:&quot;none&quot;,&quot;animationEasing&quot;:&quot;linear&quot;,&quot;progressive&quot;:0,&quot;hoverLayerThreshold&quot;:null,&quot;universalTransition&quot;:{&quot;divideShape&quot;:&quot;clone&quot;},&quot;triggerLineEvent&quot;:false},{&quot;name&quot;:&quot;全球AI市場&quot;,&quot;type&quot;:&quot;line&quot;,&quot;data&quot;:[0.5,0.6,0.8,1,1.3,1.7,2.5],&quot;smooth&quot;:true,&quot;lineStyle&quot;:{&quot;color&quot;:&quot;#3b82f6&quot;,&quot;width&quot;:3,&quot;type&quot;:&quot;solid&quot;},&quot;itemStyle&quot;:{&quot;color&quot;:&quot;#3b82f6&quot;},&quot;areaStyle&quot;:{&quot;color&quot;:{&quot;colorStops&quot;:[{&quot;offset&quot;:0,&quot;color&quot;:&quot;rgba(59, 130, 246, 0.3)&quot;},{&quot;offset&quot;:1,&quot;color&quot;:&quot;rgba(59, 130, 246, 0.1)&quot;}],&quot;x&quot;:0,&quot;y&quot;:0,&quot;x2&quot;:0,&quot;y2&quot;:1,&quot;type&quot;:&quot;linear&quot;,&quot;global&quot;:false}},&quot;symbol&quot;:&quot;circle&quot;,&quot;z&quot;:3,&quot;coordinateSystem&quot;:&quot;cartesian2d&quot;,&quot;legendHoverLink&quot;:true,&quot;clip&quot;:true,&quot;label&quot;:{&quot;position&quot;:&quot;top&quot;},&quot;endLabel&quot;:{&quot;show&quot;:false,&quot;valueAnimation&quot;:true,&quot;distance&quot;:8},&quot;emphasis&quot;:{&quot;scale&quot;:true,&quot;label&quot;:{}},&quot;step&quot;:false,&quot;smoothMonotone&quot;:null,&quot;symbolSize&quot;:4,&quot;symbolRotate&quot;:null,&quot;showSymbol&quot;:true,&quot;showAllSymbol&quot;:&quot;auto&quot;,&quot;connectNulls&quot;:false,&quot;sampling&quot;:&quot;none&quot;,&quot;animationEasing&quot;:&quot;linear&quot;,&quot;progressive&quot;:0,&quot;hoverLayerThreshold&quot;:null,&quot;universalTransition&quot;:{&quot;divideShape&quot;:&quot;clone&quot;},&quot;triggerLineEvent&quot;:false}],&quot;visualMap&quot;:[],&quot;legend&quot;:[{&quot;data&quot;:[&quot;生成式AI支出&quot;,&quot;全球AI市場&quot;],&quot;textStyle&quot;:{&quot;color&quot;:&quot;#ffffff&quot;},&quot;z&quot;:4,&quot;show&quot;:true,&quot;orient&quot;:&quot;horizontal&quot;,&quot;left&quot;:&quot;center&quot;,&quot;top&quot;:0,&quot;align&quot;:&quot;auto&quot;,&quot;backgroundColor&quot;:&quot;rgba(0,0,0,0)&quot;,&quot;borderColor&quot;:&quot;#ccc&quot;,&quot;borderRadius&quot;:0,&quot;borderWidth&quot;:0,&quot;padding&quot;:5,&quot;itemGap&quot;:10,&quot;itemWidth&quot;:25,&quot;itemHeight&quot;:14,&quot;symbolRotate&quot;:&quot;inherit&quot;,&quot;symbolKeepAspect&quot;:true,&quot;inactiveColor&quot;:&quot;#ccc&quot;,&quot;inactiveBorderColor&quot;:&quot;#ccc&quot;,&quot;inactiveBorderWidth&quot;:&quot;auto&quot;,&quot;itemStyle&quot;:{&quot;color&quot;:&quot;inherit&quot;,&quot;opacity&quot;:&quot;inherit&quot;,&quot;borderColor&quot;:&quot;inherit&quot;,&quot;borderWidth&quot;:&quot;auto&quot;,&quot;borderCap&quot;:&quot;inherit&quot;,&quot;borderJoin&quot;:&quot;inherit&quot;,&quot;borderDashOffset&quot;:&quot;inherit&quot;,&quot;borderMiterLimit&quot;:&quot;inherit&quot;},&quot;lineStyle&quot;:{&quot;width&quot;:&quot;auto&quot;,&quot;color&quot;:&quot;inherit&quot;,&quot;inactiveColor&quot;:&quot;#ccc&quot;,&quot;inactiveWidth&quot;:2,&quot;opacity&quot;:&quot;inherit&quot;,&quot;type&quot;:&quot;inherit&quot;,&quot;cap&quot;:&quot;inherit&quot;,&quot;join&quot;:&quot;inherit&quot;,&quot;dashOffset&quot;:&quot;inherit&quot;,&quot;miterLimit&quot;:&quot;inherit&quot;},&quot;selectedMode&quot;:true,&quot;selector&quot;:false,&quot;selectorLabel&quot;:{&quot;show&quot;:true,&quot;borderRadius&quot;:10,&quot;padding&quot;:[3,5,3,5],&quot;fontSize&quot;:12,&quot;fontFamily&quot;:&quot;sans-serif&quot;,&quot;color&quot;:&quot;#666&quot;,&quot;borderWidth&quot;:1,&quot;borderColor&quot;:&quot;#666&quot;},&quot;emphasis&quot;:{&quot;selectorLabel&quot;:{&quot;show&quot;:true,&quot;color&quot;:&quot;#eee&quot;,&quot;backgroundColor&quot;:&quot;#666&quot;}},&quot;selectorPosition&quot;:&quot;auto&quot;,&quot;selectorItemGap&quot;:7,&quot;selectorButtonGap&quot;:10,&quot;tooltip&quot;:{&quot;show&quot;:false},&quot;selected&quot;:{}}],&quot;markArea&quot;:[],&quot;markLine&quot;:[],&quot;markPoint&quot;:[],&quot;brush&quot;:[],&quot;dataZoom&quot;:[]}"><div style="position: relative; width: 1152px; height: 400px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="1152" height="400" style="position: absolute; left: 0px; top: 0px; width: 1152px; height: 400px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class=""></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Outlook Section -->
+    <section id="outlook" class="py-20 bg-white dark:bg-gray-900" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">投資展望</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">市場普遍看好AI的長期趨勢，但投資需謹慎評估基本面</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+                <!-- Long-term Growth -->
+                <div class="bg-gradient-to-br from-green-50 to-emerald-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                        <i class="fas fa-chart-line text-green-600 mr-3"></i>
+                        長期成長動能
+                    </h3>
+                    <div class="space-y-6">
+                        <div class="bg-white dark:bg-gray-600 rounded-xl p-6" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                            <div class="flex items-center mb-4">
+                                <div class="text-3xl font-bold text-green-600 mr-4">95.4%</div>
+                                <div>
+                                    <div class="font-semibold text-gray-900 dark:text-white">生成式AI支出複合成長率</div>
+                                    <div class="text-sm text-gray-600 dark:text-gray-400">2022-2027年 (IDC研究)</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-gray-600 rounded-xl p-6" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                            <div class="flex items-center mb-4">
+                                <div class="text-3xl font-bold text-blue-600 mr-4">25%+</div>
+                                <div>
+                                    <div class="font-semibold text-gray-900 dark:text-white">全球AI市場複合成長率</div>
+                                    <div class="text-sm text-gray-600 dark:text-gray-400">未來幾年預測</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-gray-600 rounded-xl p-6" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                            <div class="flex items-center mb-4">
+                                <div class="text-3xl font-bold text-purple-600 mr-4">2.5兆</div>
+                                <div>
+                                    <div class="font-semibold text-gray-900 dark:text-white">2032年全球AI產值</div>
+                                    <div class="text-sm text-gray-600 dark:text-gray-400">美元</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Investment Recommendations -->
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                        <i class="fas fa-lightbulb text-blue-600 mr-3"></i>
+                        投資建議
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="bg-white dark:bg-gray-600 rounded-xl p-6" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                            <div class="flex items-start">
+                                <i class="fas fa-exclamation-triangle text-yellow-500 mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white mb-2">風險提醒</h4>
+                                    <p class="text-gray-600 dark:text-gray-300 text-sm">需關注企業營運表現，避免股價偏離基本面，謹防追高殺低</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-gray-600 rounded-xl p-6" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                            <div class="flex items-start">
+                                <i class="fas fa-star text-gold-500 mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white mb-2">黃仁勳點名企業</h4>
+                                    <p class="text-gray-600 dark:text-gray-300 text-sm">關注台股9大明星企業：台積電、廣達、緯創、鴻海、日月光投控、華碩、聯發科、微星、技嘉</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Companies Grid -->
+            <div class="mb-16">
+                <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">黃仁勳點名的台股9大明星企業</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl p-6 text-white text-center shadow-lg transform hover:scale-105 transition-transform">
+                        <h4 class="text-xl font-bold mb-2">台積電</h4>
+                        <p class="text-blue-100">全球晶圓代工龍頭</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-green-500 to-teal-600 rounded-xl p-6 text-white text-center shadow-lg transform hover:scale-105 transition-transform">
+                        <h4 class="text-xl font-bold mb-2">廣達</h4>
+                        <p class="text-green-100">AI伺服器代工</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-orange-500 to-red-600 rounded-xl p-6 text-white text-center shadow-lg transform hover:scale-105 transition-transform">
+                        <h4 class="text-xl font-bold mb-2">緯創</h4>
+                        <p class="text-orange-100">電子代工製造</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl p-6 text-white text-center shadow-lg transform hover:scale-105 transition-transform">
+                        <h4 class="text-xl font-bold mb-2">鴻海</h4>
+                        <p class="text-purple-100">電子代工巨頭</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-indigo-500 to-blue-600 rounded-xl p-6 text-white text-center shadow-lg transform hover:scale-105 transition-transform">
+                        <h4 class="text-xl font-bold mb-2">日月光投控</h4>
+                        <p class="text-indigo-100">封裝測試服務</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-teal-500 to-green-600 rounded-xl p-6 text-white text-center shadow-lg transform hover:scale-105 transition-transform">
+                        <h4 class="text-xl font-bold mb-2">華碩</h4>
+                        <p class="text-teal-100">電腦硬體製造</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-red-500 to-orange-600 rounded-xl p-6 text-white text-center shadow-lg transform hover:scale-105 transition-transform">
+                        <h4 class="text-xl font-bold mb-2">聯發科</h4>
+                        <p class="text-red-100">晶片設計</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-pink-500 to-purple-600 rounded-xl p-6 text-white text-center shadow-lg transform hover:scale-105 transition-transform">
+                        <h4 class="text-xl font-bold mb-2">微星</h4>
+                        <p class="text-pink-100">電腦硬體</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl p-6 text-white text-center shadow-lg transform hover:scale-105 transition-transform">
+                        <h4 class="text-xl font-bold mb-2">技嘉</h4>
+                        <p class="text-blue-100">主機板製造</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conclusion -->
+            <div class="bg-gradient-to-r from-gray-900 to-blue-900 rounded-2xl p-12 text-center text-white">
+                <h3 class="text-3xl font-bold mb-6">結論</h3>
+                <p class="text-xl leading-relaxed max-w-4xl mx-auto">
+                    台灣AI概念股涵蓋完整產業鏈，從晶片設計製造到伺服器組裝，都有具競爭力的廠商參與，在全球AI浪潮中扮演重要角色。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center" data-element-id="50ffb27b-78b1-44e6-9c76-c7928a3e45fc">
+                <div class="flex justify-center items-center space-x-4 mb-6">
+                    <i class="fas fa-chart-line text-3xl text-primary"></i>
+                    <span class="text-2xl font-bold">台灣AI概念股分析</span>
+                </div>
+                <p class="text-gray-400 mb-4">
+                    專業的台灣AI概念股市場分析與投資展望
+                </p>
+                <div class="border-t border-gray-700 pt-6">
+                    <p class="text-gray-400 text-sm">
+                        © 2025 Mayi Xiao. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode functionality
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const html = document.documentElement;
+
+        // Check for saved theme preference or default to system preference
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+            html.classList.add('dark');
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+            
+            // Reinitialize charts with new theme
+            setTimeout(() => {
+                initializeCharts();
+            }, 100);
+        });
+
+        // Mermaid initialization
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: html.classList.contains('dark') ? 'dark' : 'default',
+            themeVariables: {
+                primaryColor: '#667eea',
+                primaryTextColor: html.classList.contains('dark') ? '#ffffff' : '#000000',
+                primaryBorderColor: '#764ba2',
+                lineColor: '#764ba2'
+            }
+        });
+
+        // Chart variables
+        let indexChart, growthChart;
+
+        function initializeCharts() {
+            // Dispose existing charts
+            if (indexChart) indexChart.dispose();
+            if (growthChart) growthChart.dispose();
+
+            const isDark = html.classList.contains('dark');
+            const theme = isDark ? 'dark' : null;
+
+            // Index Performance Chart
+            indexChart = echarts.init(document.getElementById('indexChart'), theme);
+            const indexOption = {
+                tooltip: {
+                    trigger: 'axis',
+                    backgroundColor: isDark ? '#374151' : '#ffffff',
+                    borderColor: isDark ? '#6b7280' : '#e5e7eb',
+                    textStyle: {
+                        color: isDark ? '#ffffff' : '#000000'
+                    }
+                },
+                legend: {
+                    data: ['累積報酬率'],
+                    textStyle: {
+                        color: isDark ? '#ffffff' : '#000000'
+                    }
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'category',
+                    data: ['1個月', '3個月', '6個月', '1年'],
+                    axisLabel: {
+                        color: isDark ? '#9ca3af' : '#6b7280'
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: isDark ? '#6b7280' : '#d1d5db'
+                        }
+                    }
+                },
+                yAxis: {
+                    type: 'value',
+                    axisLabel: {
+                        formatter: '{value}%',
+                        color: isDark ? '#9ca3af' : '#6b7280'
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: isDark ? '#6b7280' : '#d1d5db'
+                        }
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            color: isDark ? '#374151' : '#f3f4f6'
+                        }
+                    }
+                },
+                series: [{
+                    name: '累積報酬率',
+                    type: 'bar',
+                    data: [7.21, 21.96, 70.49, 21.24],
+                    itemStyle: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                            {offset: 0, color: '#667eea'},
+                            {offset: 1, color: '#764ba2'}
+                        ])
+                    },
+                    label: {
+                        show: true,
+                        position: 'top',
+                        formatter: '{c}%',
+                        color: isDark ? '#ffffff' : '#000000'
+                    }
+                }]
+            };
+            indexChart.setOption(indexOption);
+
+            // Growth Projection Chart
+            growthChart = echarts.init(document.getElementById('growthChart'), theme);
+            const growthOption = {
+                tooltip: {
+                    trigger: 'axis',
+                    backgroundColor: isDark ? '#374151' : '#ffffff',
+                    borderColor: isDark ? '#6b7280' : '#e5e7eb',
+                    textStyle: {
+                        color: isDark ? '#ffffff' : '#000000'
+                    }
+                },
+                legend: {
+                    data: ['生成式AI支出', '全球AI市場'],
+                    textStyle: {
+                        color: isDark ? '#ffffff' : '#000000'
+                    }
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'category',
+                    data: ['2022', '2023', '2024', '2025', '2026', '2027', '2032'],
+                    axisLabel: {
+                        color: isDark ? '#9ca3af' : '#6b7280'
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: isDark ? '#6b7280' : '#d1d5db'
+                        }
+                    }
+                },
+                yAxis: {
+                    type: 'value',
+                    axisLabel: {
+                        formatter: '{value}兆美元',
+                        color: isDark ? '#9ca3af' : '#6b7280'
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: isDark ? '#6b7280' : '#d1d5db'
+                        }
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            color: isDark ? '#374151' : '#f3f4f6'
+                        }
+                    }
+                },
+                series: [
+                    {
+                        name: '生成式AI支出',
+                        type: 'line',
+                        data: [0.1, 0.2, 0.4, 0.8, 1.5, 2.8, null],
+                        smooth: true,
+                        lineStyle: {
+                            color: '#10b981',
+                            width: 3
+                        },
+                        itemStyle: {
+                            color: '#10b981'
+                        },
+                        areaStyle: {
+                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                                {offset: 0, color: 'rgba(16, 185, 129, 0.3)'},
+                                {offset: 1, color: 'rgba(16, 185, 129, 0.1)'}
+                            ])
+                        }
+                    },
+                    {
+                        name: '全球AI市場',
+                        type: 'line',
+                        data: [0.5, 0.6, 0.8, 1.0, 1.3, 1.7, 2.5],
+                        smooth: true,
+                        lineStyle: {
+                            color: '#3b82f6',
+                            width: 3
+                        },
+                        itemStyle: {
+                            color: '#3b82f6'
+                        },
+                        areaStyle: {
+                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                                {offset: 0, color: 'rgba(59, 130, 246, 0.3)'},
+                                {offset: 1, color: 'rgba(59, 130, 246, 0.1)'}
+                            ])
+                        }
+                    }
+                ]
+            };
+            growthChart.setOption(growthOption);
+        }
+
+        // Initialize charts on page load
+        window.addEventListener('load', () => {
+            setTimeout(initializeCharts, 500);
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (indexChart) indexChart.resize();
+            if (growthChart) growthChart.resize();
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply animation to cards
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.bg-white, .glass-card');
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
+
+<div class="mermaidTooltip" style="opacity: 0;"></div></body></html>
