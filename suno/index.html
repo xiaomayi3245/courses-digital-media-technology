@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一路相伴 - 音樂播放器</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        /* 美化滾動條 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #2d3748;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4a5568;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #718096;
+        }
+        /* 進度條自訂樣式 */
+        .progress-bar-container {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 8px;
+            background: #4a5568;
+            border-radius: 5px;
+            outline: none;
+            cursor: pointer;
+        }
+        .progress-bar-container::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            background: #f7fafc;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 5px rgba(0,0,0,0.5);
+        }
+        .progress-bar-container::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            background: #f7fafc;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+        }
+        /* 歌詞高亮效果 */
+        .lyric-line {
+            transition: all 0.3s ease-in-out;
+            opacity: 0.5;
+            transform: scale(0.95);
+        }
+        .lyric-line.active {
+            color: #63b3ed;
+            opacity: 1;
+            transform: scale(1);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen p-4">
+    <div class="w-full max-w-md bg-gray-800 rounded-2xl shadow-2xl p-6 space-y-6">
+        <!-- 歌曲資訊 -->
+        <div>
+            <h1 id="song-title" class="text-3xl font-bold text-center text-gray-100">一路相伴</h1>
+            <p id="song-artist" class="text-center text-blue-300">版本一</p>
+        </div>
+
+        <!-- 歌詞顯示區 -->
+        <div id="lyrics-container" class="h-48 overflow-y-auto text-center text-lg leading-loose p-2 rounded-lg bg-gray-900/50">
+            <!-- 歌詞將由 JavaScript 動態載入 -->
+        </div>
+
+        <!-- 時間顯示 -->
+        <div class="flex justify-between text-sm text-gray-400">
+            <span id="current-time">0:00</span>
+            <span id="duration">0:00</span>
+        </div>
+
+        <!-- 進度條 -->
+        <div class="relative">
+             <input type="range" id="progress-bar" class="progress-bar-container" value="0" step="0.1">
+        </div>
+        
+        <!-- 播放控制 -->
+        <div class="flex items-center justify-center space-x-8">
+            <button id="play-pause-btn" class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-lg transform hover:scale-105 transition-transform focus:outline-none">
+                <svg id="play-icon" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                </svg>
+                <svg id="pause-icon" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 hidden" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8 7a1 1 0 00-1 1v4a1 1 0 001 1h4a1 1 0 001-1V8a1 1 0 00-1-1H8z" clip-rule="evenodd" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- 歌曲選擇 -->
+        <div class="pt-4 border-t border-gray-700">
+            <h3 class="text-center text-gray-400 mb-3">選擇歌曲版本</h3>
+            <div class="flex justify-center gap-4">
+                <button class="song-select-btn px-4 py-2 bg-gray-700 hover:bg-blue-500 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400" data-song-index="0">版本一</button>
+                <button class="song-select-btn px-4 py-2 bg-gray-700 hover:bg-blue-500 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400" data-song-index="1">版本二</button>
+            </div>
+        </div>
+    </div>
+
+    <audio id="audio-player" preload="metadata"></audio>
+
+    <script>
+        // DOM 元素
+        const audioPlayer = document.getElementById('audio-player');
+        const playPauseBtn = document.getElementById('play-pause-btn');
+        const playIcon = document.getElementById('play-icon');
+        const pauseIcon = document.getElementById('pause-icon');
+        const progressBar = document.getElementById('progress-bar');
+        const currentTimeEl = document.getElementById('current-time');
+        const durationEl = document.getElementById('duration');
+        const lyricsContainer = document.getElementById('lyrics-container');
+        const songTitleEl = document.getElementById('song-title');
+        const songArtistEl = document.getElementById('song-artist');
+        const songSelectBtns = document.querySelectorAll('.song-select-btn');
+        
+        // 歌詞數據 (時間: 秒)
+        const lyricsData = [
+            { time: 8.0, text: "十年前的那個秋天" },
+            { time: 11.5, text: "我們在人海中遇見" },
+            { time: 15.0, text: "青澀的笑容還那麼鮮" },
+            { time: 18.5, text: "不知道緣分會走多遠" },
+            { time: 23.0, text: "深夜裡的電話線" },
+            { time: 26.5, text: "聽你說著心裡面" },
+            { time: 30.0, text: "那些不敢告訴別人的" },
+            { time: 33.5, text: "我都懂你的疲倦" },
+            { time: 37.0, text: "一路相伴走過風和雨" },
+            { time: 42.0, text: "你的笑是我最暖的光明" },
+            { time: 47.5, text: "一路相伴分享淚和喜" },
+            { time: 52.5, text: "這份情誼比什麼都珍貴" },
+            { time: 66.0, text: "當你難過我陪你哭" },
+            { time: 69.5, text: "當你快樂我為你祝福" },
+            { time: 73.0, text: "生命中最美的禮物" },
+            { time: 76.5, text: "是有你在我的路" },
+            { time: 80.0, text: "時光會老但我們不散" },
+            { time: 85.0, text: "這份承諾不需要誓言" },
+            { time: 90.0, text: "未來還有多遠多難" },
+            { time: 94.5, text: "我們依然手牽著手向前" },
+            { time: 98.0, text: "一路相伴走過風和雨" },
+            { time: 103.0, text: "你的笑是我最暖的光明" },
+            { time: 108.0, text: "一路相伴分享淚和喜" },
+            { time: 113.0, text: "這份情誼比什麼都珍貴" },
+        ];
+
+        // 歌曲列表
+        const songs = [
+            {
+                title: "一路相伴",
+                artist: "版本一",
+                src: 'audio1.mp3',
+                lyrics: lyricsData
+            },
+            {
+                title: "一路相伴",
+                artist: "版本二",
+                src: 'audio2.mp3',
+                lyrics: lyricsData
+            }
+        ];
+
+        let currentSongIndex = 0;
+        let isPlaying = false;
+        let currentLyricIndex = -1;
+
+        // 載入歌曲
+        function loadSong(song) {
+            songTitleEl.textContent = song.title;
+            songArtistEl.textContent = song.artist;
+            audioPlayer.src = song.src;
+            loadLyrics(song.lyrics);
+        }
+
+        // 載入歌詞
+        function loadLyrics(lyrics) {
+            lyricsContainer.innerHTML = '';
+            if (lyrics && lyrics.length > 0) {
+                lyrics.forEach(line => {
+                    const p = document.createElement('p');
+                    p.textContent = line.text;
+                    p.classList.add('lyric-line');
+                    lyricsContainer.appendChild(p);
+                });
+            } else {
+                lyricsContainer.innerHTML = '<p class="lyric-line active" style="opacity: 0.7;">此版本暫無歌詞</p>';
+            }
+        }
+        
+        // 播放/暫停
+        function togglePlayPause() {
+            if (isPlaying) {
+                pauseSong();
+            } else {
+                playSong();
+            }
+        }
+
+        function playSong() {
+            isPlaying = true;
+            audioPlayer.play();
+            playIcon.classList.add('hidden');
+            pauseIcon.classList.remove('hidden');
+            playPauseBtn.classList.remove('bg-blue-600');
+            playPauseBtn.classList.add('bg-pink-600');
+        }
+
+        function pauseSong() {
+            isPlaying = false;
+            audioPlayer.pause();
+            playIcon.classList.remove('hidden');
+            pauseIcon.classList.add('hidden');
+            playPauseBtn.classList.remove('bg-pink-600');
+            playPauseBtn.classList.add('bg-blue-600');
+        }
+        
+        // 更新進度條
+        function updateProgress(e) {
+            const { duration, currentTime } = e.srcElement;
+            const progressPercent = (currentTime / duration) * 100;
+            progressBar.value = progressPercent;
+            
+            // 更新時間顯示
+            currentTimeEl.textContent = formatTime(currentTime);
+
+            // 更新歌詞
+            updateLyrics(currentTime);
+        }
+
+        // 設定進度
+        function setProgress(e) {
+            const width = this.clientWidth;
+            const clickX = e.offsetX;
+            const duration = audioPlayer.duration;
+            
+            if (duration) {
+                audioPlayer.currentTime = (clickX / width) * duration;
+            }
+        }
+        
+        function setProgressFromRange() {
+            const duration = audioPlayer.duration;
+            if (duration) {
+                audioPlayer.currentTime = (progressBar.value / 100) * duration;
+            }
+        }
+
+
+        // 格式化時間
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+
+        // 更新歌詞高亮
+        function updateLyrics(currentTime) {
+            const lyrics = songs[currentSongIndex].lyrics;
+            if (!lyrics || lyrics.length === 0) return;
+
+            let newLyricIndex = -1;
+            for (let i = 0; i < lyrics.length; i++) {
+                if (currentTime >= lyrics[i].time) {
+                    newLyricIndex = i;
+                } else {
+                    break;
+                }
+            }
+            
+            if (newLyricIndex !== currentLyricIndex) {
+                const lyricLines = lyricsContainer.querySelectorAll('.lyric-line');
+                if (currentLyricIndex !== -1 && lyricLines[currentLyricIndex]) {
+                    lyricLines[currentLyricIndex].classList.remove('active');
+                }
+                if (newLyricIndex !== -1 && lyricLines[newLyricIndex]) {
+                    lyricLines[newLyricIndex].classList.add('active');
+                    // 滾動到高亮歌詞
+                    lyricLines[newLyricIndex].scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                }
+                currentLyricIndex = newLyricIndex;
+            }
+        }
+
+        // 設定總時長
+        function setDuration() {
+            durationEl.textContent = formatTime(audioPlayer.duration);
+            progressBar.max = 100; // 確保 max 屬性設定為 100
+        }
+
+        // 事件監聽
+        playPauseBtn.addEventListener('click', togglePlayPause);
+        audioPlayer.addEventListener('timeupdate', updateProgress);
+        audioPlayer.addEventListener('loadedmetadata', setDuration);
+        audioPlayer.addEventListener('ended', () => {
+             pauseSong();
+             audioPlayer.currentTime = 0;
+             updateLyrics(-1); // 重置歌詞高亮
+        });
+        progressBar.addEventListener('input', setProgressFromRange);
+        
+        songSelectBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                currentSongIndex = parseInt(btn.dataset.songIndex);
+                loadSong(songs[currentSongIndex]);
+                pauseSong(); // 切換歌曲時先暫停
+                audioPlayer.currentTime = 0; // 重置時間
+                progressBar.value = 0; // 重置進度條
+            });
+        });
+
+        // 初始載入
+        loadSong(songs[currentSongIndex]);
+    </script>
+</body>
+</html>
