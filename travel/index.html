@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台中三日遊行程規劃</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #f0f4f8;
+            color: #334155;
+        }
+        .card-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .card-shadow:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .add-btn {
+            background-color: #64b5f6; /* A slightly darker shade of blue */
+            color: white;
+            padding: 8px 16px;
+            border-radius: 9999px;
+            font-weight: bold;
+            font-size: 0.875rem;
+            transition: background-color 0.2s;
+        }
+        .add-btn:hover {
+            background-color: #42a5f5; /* A darker blue on hover */
+        }
+        .remove-btn {
+            background-color: #ef5350; /* A red shade for removal */
+            color: white;
+            padding: 4px 8px;
+            border-radius: 9999px;
+            font-weight: bold;
+            font-size: 0.75rem;
+            transition: background-color 0.2s;
+        }
+        .remove-btn:hover {
+            background-color: #e53935; /* A darker red on hover */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col items-center">
+
+    <header class="w-full bg-white card-shadow rounded-b-xl py-6 px-4 md:px-8 text-center sticky top-0 z-50">
+        <h1 class="text-3xl font-bold text-sky-700">台中三日遊行程規劃</h1>
+        <p class="text-lg text-gray-600 mt-2">點擊下方景點卡片，將其加入您的每日行程！</p>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Day 1 Itinerary -->
+            <div class="bg-white rounded-xl card-shadow p-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">第一天：文創與市集</h2>
+                <div id="day1-itinerary" class="space-y-4">
+                    <!-- Day 1 selected items will be added here -->
+                </div>
+            </div>
+
+            <!-- Day 2 Itinerary -->
+            <div class="bg-white rounded-xl card-shadow p-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">第二天：自然與藝術</h2>
+                <div id="day2-itinerary" class="space-y-4">
+                    <!-- Day 2 selected items will be added here -->
+                </div>
+            </div>
+
+            <!-- Day 3 Itinerary -->
+            <div class="bg-white rounded-xl card-shadow p-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">第三天：美食與回憶</h2>
+                <div class="space-y-4" id="day3-itinerary">
+                    <!-- Day 3 selected items will be added here -->
+                </div>
+            </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-gray-800 mt-12 mb-4 text-center">建議景點</h2>
+        <div id="attractions-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Attractions cards will be dynamically generated here -->
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const attractions = [
+                {
+                    id: '1',
+                    name: '審計新村',
+                    description: '老宿舍改造的文創聚落，有許多特色小店和咖啡廳。',
+                    imageUrl: 'https://placehold.co/600x400/D0F0E0/334155?text=審計新村',
+                    day: 1
+                },
+                {
+                    id: '2',
+                    name: '國立臺灣美術館',
+                    description: '台灣第一座國家級美術館，展出多樣化的現代與當代藝術作品。',
+                    imageUrl: 'https://placehold.co/600x400/E5E8B6/334155?text=國美館',
+                    day: 1
+                },
+                {
+                    id: '3',
+                    name: '勤美誠品綠園道',
+                    description: '都會中的綠色廊道，結合文創市集與大型百貨公司。',
+                    imageUrl: 'https://placehold.co/600x400/C8E6C9/334155?text=勤美綠園道',
+                    day: 1
+                },
+                {
+                    id: '4',
+                    name: '逢甲夜市',
+                    description: '聞名全台的超人氣夜市，美食小吃應有盡有。',
+                    imageUrl: 'https://placehold.co/600x400/A0D2EB/334155?text=逢甲夜市',
+                    day: 1
+                },
+                {
+                    id: '5',
+                    name: '彩虹眷村',
+                    description: '充滿童趣和色彩的彩繪村莊，由彩虹爺爺親手繪製。',
+                    imageUrl: 'https://placehold.co/600x400/FFD8D8/334155?text=彩虹眷村',
+                    day: 2
+                },
+                {
+                    id: '6',
+                    name: '高美濕地',
+                    description: '台灣重要的生態保育區，以日落美景聞名。',
+                    imageUrl: 'https://placehold.co/600x400/A2E6FF/334155?text=高美濕地',
+                    day: 2
+                },
+                {
+                    id: '7',
+                    name: '東海藝術街',
+                    description: '坡道兩旁有許多異國料理餐廳和特色商店。',
+                    imageUrl: 'https://placehold.co/600x400/F0D0D0/334155?text=東海藝術街',
+                    day: 2
+                },
+                {
+                    id: '8',
+                    name: '宮原眼科',
+                    description: '日式紅磚建築，內部販售伴手禮和冰淇淋，是超人氣打卡點。',
+                    imageUrl: 'https://placehold.co/600x400/B2EBF2/334155?text=宮原眼科',
+                    day: 3
+                },
+                {
+                    id: '9',
+                    name: '臺中火車站',
+                    description: '新舊火車站並存，周邊有許多古蹟和老店，可以漫步探索。',
+                    imageUrl: 'https://placehold.co/600x400/F0F0D0/334155?text=臺中火車站',
+                    day: 3
+                },
+                {
+                    id: '10',
+                    name: '一中街商圈',
+                    description: '結合美食、潮流服飾和3C用品的年輕人聚集地。',
+                    imageUrl: 'https://placehold.co/600x400/D9D9F9/334155?text=一中街',
+                    day: 3
+                }
+            ];
+
+            const itinerary = {
+                day1: [],
+                day2: [],
+                day3: []
+            };
+
+            const attractionsGrid = document.getElementById('attractions-grid');
+
+            // Function to render all attraction cards
+            function renderAttractions() {
+                attractionsGrid.innerHTML = '';
+                attractions.forEach(attraction => {
+                    const card = document.createElement('div');
+                    card.className = 'bg-white rounded-xl overflow-hidden card-shadow flex flex-col';
+                    card.innerHTML = `
+                        <div class="relative w-full h-48 overflow-hidden bg-gray-200">
+                            <img src="${attraction.imageUrl}" alt="${attraction.name}" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold mb-2 text-gray-800">${attraction.name}</h3>
+                                <p class="text-gray-600 text-sm">${attraction.description}</p>
+                            </div>
+                            <button data-id="${attraction.id}" data-day="${attraction.day}" class="add-btn mt-4 self-end">加入行程</button>
+                        </div>
+                    `;
+                    attractionsGrid.appendChild(card);
+                });
+            }
+
+            // Function to render a specific day's itinerary
+            function renderItinerary(day) {
+                const dayItineraryDiv = document.getElementById(`day${day}-itinerary`);
+                dayItineraryDiv.innerHTML = '';
+                itinerary[`day${day}`].forEach(item => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'flex items-center justify-between bg-gray-50 rounded-lg p-3 card-shadow';
+                    itemDiv.innerHTML = `
+                        <span class="text-base font-semibold text-gray-700">${item.name}</span>
+                        <button data-id="${item.id}" data-day="${day}" class="remove-btn">移除</button>
+                    `;
+                    dayItineraryDiv.appendChild(itemDiv);
+                });
+            }
+
+            // Initial rendering of all attractions
+            renderAttractions();
+
+            // Click listener for adding attractions
+            attractionsGrid.addEventListener('click', (e) => {
+                const addBtn = e.target.closest('.add-btn');
+                if (addBtn) {
+                    const id = addBtn.dataset.id;
+                    const day = addBtn.dataset.day;
+                    const attractionToAdd = attractions.find(att => att.id === id);
+
+                    if (attractionToAdd) {
+                        const dayKey = `day${day}`;
+                        // Check if item already exists to prevent duplicates
+                        if (!itinerary[dayKey].some(item => item.id === id)) {
+                            itinerary[dayKey].push(attractionToAdd);
+                            renderItinerary(day);
+                            addBtn.disabled = true;
+                            addBtn.innerText = '已加入';
+                            addBtn.classList.remove('add-btn');
+                            addBtn.classList.add('bg-gray-400', 'text-gray-700', 'cursor-not-allowed', 'px-4', 'py-2', 'rounded-full', 'font-bold', 'text-sm');
+                        }
+                    }
+                }
+            });
+
+            // Click listener for removing attractions from itinerary
+            document.querySelectorAll('[id$="-itinerary"]').forEach(itineraryDiv => {
+                itineraryDiv.addEventListener('click', (e) => {
+                    const removeBtn = e.target.closest('.remove-btn');
+                    if (removeBtn) {
+                        const id = removeBtn.dataset.id;
+                        const day = removeBtn.dataset.day;
+                        const dayKey = `day${day}`;
+                        
+                        // Remove item from the itinerary array
+                        itinerary[dayKey] = itinerary[dayKey].filter(item => item.id !== id);
+                        renderItinerary(day);
+
+                        // Re-enable the original attraction card button
+                        const addBtn = document.querySelector(`.add-btn[data-id="${id}"]`) || document.querySelector(`button[data-id="${id}"]`);
+                        if (addBtn) {
+                            addBtn.disabled = false;
+                            addBtn.innerText = '加入行程';
+                            addBtn.classList.remove('bg-gray-400', 'text-gray-700', 'cursor-not-allowed', 'px-4', 'py-2', 'rounded-full', 'font-bold', 'text-sm');
+                            addBtn.classList.add('add-btn');
+                        }
+                    }
+                });
+            });
+
+            // Pre-populate the itinerary based on the `day` property of each attraction
+            attractions.forEach(attraction => {
+                const dayKey = `day${attraction.day}`;
+                if (itinerary[dayKey]) {
+                    itinerary[dayKey].push(attraction);
+                }
+            });
+
+            // Render initial itineraries
+            renderItinerary(1);
+            renderItinerary(2);
+            renderItinerary(3);
+
+            // Disable buttons for pre-populated items
+            document.querySelectorAll('.add-btn').forEach(btn => {
+                const id = btn.dataset.id;
+                const day = btn.dataset.day;
+                const dayKey = `day${day}`;
+                if (itinerary[dayKey].some(item => item.id === id)) {
+                     btn.disabled = true;
+                     btn.innerText = '已加入';
+                     btn.classList.remove('add-btn');
+                     btn.classList.add('bg-gray-400', 'text-gray-700', 'cursor-not-allowed', 'px-4', 'py-2', 'rounded-full', 'font-bold', 'text-sm');
+                }
+            });
+
+        });
+    </script>
+
+</body>
+</html>
